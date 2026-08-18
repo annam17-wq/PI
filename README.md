@@ -1,4 +1,4 @@
-\## DIRETÓRIO
+## DIRETÓRIO
 
 cd Documents
 
@@ -6,7 +6,7 @@ cd Documents
 git clone https://github.com/annam17-wq/PI.git
 
 
-\## ENTRAR NO DIRETÓRIO DO PROJETO
+## ENTRAR NO DIRETÓRIO DO PROJETO
 
 cd PI
 
@@ -18,5 +18,8 @@ git reset --hard (limpa os arquivos que já existiam)
 
 git clean -fd (apaga todo arquivo novo criado)
 
+## COMO CRIAR BRANCH
+git checkout -b nome da branch
 
-
+## COMO MUDAR DE BRANCH
+git checkout nome da branch
