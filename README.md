@@ -1,4 +1,4 @@
-\## DIRETÓRIO
+## DIRETÓRIO
 
 cd Documents
 
