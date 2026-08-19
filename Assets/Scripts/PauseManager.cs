@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement; // necessário para trocar de cena
 
 public class PauseManager : MonoBehaviour
 {
@@ -9,45 +10,58 @@ public class PauseManager : MonoBehaviour
     public KeyCode teclaPause = KeyCode.Escape;
 
     [Header("Bloqueio de interação fora do pause")]
-    [Tooltip("CanvasGroup que engloba todo o resto da interface do jogo (HUD, botões, etc). Deixe vazio se não quiser bloquear nada além do próprio EventSystem.")]
     public CanvasGroup canvasGrupoJogo;
-
-    [Tooltip("Bloqueador de clique em tela cheia (opcional). Se atribuído, será ativado junto com o pause para capturar cliques em qualquer lugar da tela, mesmo fora de elementos de UI.")]
     public GameObject bloqueadorCliqueTelaCheia;
 
     private bool pausado = false;
 
+    void Awake()
+    {
+        // Garantia extra: toda vez que essa cena carregar,
+        // o jogo NUNCA deve começar pausado, mesmo que o
+        // timeScale tenha ficado em 0 da cena anterior.
+        Time.timeScale = 1f;
+        pausado = false;
+    }
+
     void Update()
     {
-        // Permite pausar/despausar também pela tecla, além do botão
         if (Input.GetKeyDown(teclaPause))
         {
             AlternarPause();
         }
     }
 
-    // Chame esse método no OnClick() do botão de pause
     public void AlternarPause()
     {
         pausado = !pausado;
         AplicarEstadoPause();
     }
 
-    // Útil pro botão "Continuar" dentro do próprio painel de pause
     public void Continuar()
     {
         pausado = false;
         AplicarEstadoPause();
     }
 
-    // Útil pro botão "Pausar" chamar direto, sem alternar
     public void Pausar()
     {
         pausado = true;
         AplicarEstadoPause();
     }
 
-    // Centraliza a lógica de pause/despause e o bloqueio de interação
+    // Chame esse método no OnClick() do botão "Voltar ao Menu"
+    public void VoltarAoMenu(string nomeDaCena)
+    {
+        // Reseta TUDO antes de trocar de cena, senão o estado
+        // de pause "vaza" pra próxima cena (menu principal)
+        pausado = false;
+        Time.timeScale = 1f;
+        BloquearInteracaoForaDoPainel(false);
+
+        SceneManager.LoadScene(nomeDaCena);
+    }
+
     private void AplicarEstadoPause()
     {
         Time.timeScale = pausado ? 0f : 1f;
@@ -58,18 +72,14 @@ public class PauseManager : MonoBehaviour
         BloquearInteracaoForaDoPainel(pausado);
     }
 
-    // Bloqueia (ou libera) qualquer interação fora do painel de pause
     private void BloquearInteracaoForaDoPainel(bool bloquear)
     {
-        // Bloqueia o resto da UI (HUD, botões do jogo, etc.)
         if (canvasGrupoJogo != null)
         {
             canvasGrupoJogo.interactable = !bloquear;
             canvasGrupoJogo.blocksRaycasts = !bloquear;
         }
 
-        // Ativa um bloqueador de tela cheia atrás do painel de pause,
-        // útil para capturar cliques/toques que não sejam em elementos de UI
         if (bloqueadorCliqueTelaCheia != null)
             bloqueadorCliqueTelaCheia.SetActive(bloquear);
     }
