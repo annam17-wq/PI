@@ -8,7 +8,7 @@ git clone https://github.com/annam17-wq/PI.git
 
 
 
-\## ENTRAR NO DIRETÓRIO DO PROJETO
+## ENTRAR NO DIRETÓRIO DO PROJETO
 
 cd PI
 
