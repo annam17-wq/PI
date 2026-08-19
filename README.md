@@ -1,4 +1,4 @@
-\## DIRETÓRIO
+## DIRETÓRIO
 
 cd Documents
 
@@ -8,7 +8,7 @@ git clone https://github.com/annam17-wq/PI.git
 
 
 
-\## ENTRAR NO DIRETÓRIO DO PROJETO
+## ENTRAR NO DIRETÓRIO DO PROJETO
 
 cd PI
 
@@ -27,7 +27,7 @@ git checkout -b tela\_config
 
 
 
-\## MUDAR DE BRANCH
+## MUDAR DE BRANCH
 
 git checkout main
 
