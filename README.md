@@ -27,7 +27,7 @@ git checkout -b tela\_config
 
 
 
-\## MUDAR DE BRANCH
+## MUDAR DE BRANCH
 
 git checkout main
 
