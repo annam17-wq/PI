@@ -7,9 +7,6 @@ public class ConfiguracoesManager : MonoBehaviour
 {
     [Header("Brilho")]
     public Slider sliderBrilho;
-    public Image painelBrilho;
-    public float velocidadeTransicao = 3f; // ajuste a suavidade aqui
-    private float alphaAlvo;
 
     [Header("Resolução")]
     public TMP_Dropdown dropdownResolucao;
@@ -20,39 +17,21 @@ public class ConfiguracoesManager : MonoBehaviour
 
     void Start()
     {
-        // Garante que o painel preto nunca intercepte cliques da UI
-        if (painelBrilho != null)
-            painelBrilho.raycastTarget = false;
-
         CarregarConfiguracoes();
 
-        // Registrado ANTES de PopularResolucoes() para nunca ficar pra trás
-        // caso algo ali (ex: dropdown não atribuído) gere erro
         sliderBrilho.onValueChanged.AddListener(MudarBrilho);
 
         PopularResolucoes();
     }
 
-    void Update()
-    {
-        // Suaviza a transição do alpha do painel de brilho
-        if (painelBrilho != null)
-        {
-            Color cor = painelBrilho.color;
-            cor.a = Mathf.Lerp(cor.a, alphaAlvo, Time.deltaTime * velocidadeTransicao);
-            painelBrilho.color = cor;
-        }
-    }
-
     // ---------- BRILHO ----------
     public void MudarBrilho(float valor)
     {
-        // Proporcional ao range real do slider (funciona com Max Value = 1 ou = 100)
-        // valor no máximo do slider = painel totalmente transparente (sem escurecer)
-        // valor no mínimo do slider = painel totalmente opaco (tela bem escura)
         float proporcao = valor / sliderBrilho.maxValue;
-        alphaAlvo = 1f - proporcao; // define o alvo, o Update() vai suavizar até chegar lá
-        PlayerPrefs.SetFloat("Brilho", valor);
+        GameManager.Instance.currentData.brilho = proporcao;
+
+        if (BrilhoOverlay.Instance != null)
+            BrilhoOverlay.Instance.AtualizarBrilho(proporcao);
     }
 
     // ---------- RESOLUÇÃO ----------
@@ -66,8 +45,7 @@ public class ConfiguracoesManager : MonoBehaviour
 
         Resolution[] todasResolucoes = Screen.resolutions;
 
-        // Remove duplicatas (o Unity lista a mesma largura x altura várias vezes,
-        // uma para cada taxa de atualização suportada pelo monitor)
+        // Remove duplicatas (mesma largura x altura em taxas de atualização diferentes)
         List<Resolution> resolucoesFiltradas = new List<Resolution>();
         HashSet<string> vistas = new HashSet<string>();
 
@@ -100,15 +78,13 @@ public class ConfiguracoesManager : MonoBehaviour
 
         dropdownResolucao.AddOptions(opcoes);
 
-        // Se já existe uma resolução salva anteriormente, usa ela; senão usa a atual da tela
-        int indexSalvo = PlayerPrefs.GetInt("ResolucaoIndex", resolucaoAtual);
+        int indexSalvo = GameManager.Instance.currentData.resolucaoIndex;
         if (indexSalvo < 0 || indexSalvo >= resolucoes.Length)
             indexSalvo = resolucaoAtual;
 
         dropdownResolucao.SetValueWithoutNotify(indexSalvo);
         dropdownResolucao.RefreshShownValue();
 
-        // Aplica de fato a resolução salva (não só mostra no dropdown)
         Resolution resSalva = resolucoes[indexSalvo];
         Screen.SetResolution(resSalva.width, resSalva.height, Screen.fullScreen);
 
@@ -119,41 +95,37 @@ public class ConfiguracoesManager : MonoBehaviour
     {
         Resolution res = resolucoes[index];
         Screen.SetResolution(res.width, res.height, Screen.fullScreen);
-        PlayerPrefs.SetInt("ResolucaoIndex", index);
+        GameManager.Instance.currentData.resolucaoIndex = index;
     }
 
     // ---------- TELA CHEIA / JANELA ----------
     public void MudarTelaCheia(bool ativado)
     {
         Screen.fullScreen = ativado;
-        PlayerPrefs.SetInt("TelaCheia", ativado ? 1 : 0);
+        GameManager.Instance.currentData.telaCheia = ativado;
     }
 
     // ---------- SALVAR TUDO ----------
     public void SalvarConfiguracoes()
     {
-        PlayerPrefs.Save();
+        GameManager.Instance.SaveGame();
     }
 
     // ---------- CARREGAR AO ABRIR ----------
     void CarregarConfiguracoes()
     {
-        // Padrão: slider no máximo (sem salvamento prévio) = painel 100% transparente
-        float brilho = PlayerPrefs.GetFloat("Brilho", sliderBrilho.maxValue);
-        sliderBrilho.value = brilho;
-        alphaAlvo = 1f - (brilho / sliderBrilho.maxValue);
+        SaveData dados = GameManager.Instance.currentData;
 
-        // Aplica o alpha direto na primeira vez, sem transição (senão começa transparente e "acende")
-        if (painelBrilho != null)
-        {
-            Color cor = painelBrilho.color;
-            cor.a = alphaAlvo;
-            painelBrilho.color = cor;
-        }
+        // dados.brilho é armazenado como proporção (0-1); convertemos de volta
+        // para o range real do slider (que pode ir de 0 a 1, 0 a 100, etc.)
+        float proporcao = dados.brilho;
+        sliderBrilho.value = proporcao * sliderBrilho.maxValue;
 
-        bool telaCheia = PlayerPrefs.GetInt("TelaCheia", 1) == 1;
-        toggleTelaCheia.isOn = telaCheia;
-        Screen.fullScreen = telaCheia;
+        if (BrilhoOverlay.Instance != null)
+            BrilhoOverlay.Instance.AtualizarBrilho(proporcao, instantaneo: true);
+
+        toggleTelaCheia.isOn = dados.telaCheia;
+        Screen.fullScreen = dados.telaCheia;
 
         toggleTelaCheia.onValueChanged.AddListener(MudarTelaCheia);
     }
