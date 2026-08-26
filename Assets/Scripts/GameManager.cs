@@ -33,13 +33,22 @@ public class GameManager : MonoBehaviour
         SaveSystem.Save(currentData);
     }
 
-    public void AddItem(string id, int qty)
+    public bool AddItem(string id)
     {
-        var existing = currentData.inventory.Find(i => i.itemId == id);
-        if (existing != null)
-            existing.quantity += qty;
-        else
-            currentData.inventory.Add(new InventoryItem { itemId = id, quantity = qty });
+        var inventario = currentData.inventory;
+
+        var slotVazio = inventario.Find(i => i.itemId == "");
+        if (slotVazio == null)
+        {
+            Debug.Log("Inventário cheio!");
+            return false;
+        }
+
+        slotVazio.itemId = id;
+        Debug.Log($"Item '{id}' adicionado aos dados. InventoryUI.Instance é null? {InventoryUI.Instance == null}");
+
+        InventoryUI.Instance?.AtualizarUI();
+        return true;
     }
 
     void OnApplicationQuit()
