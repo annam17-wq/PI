@@ -1,10 +1,9 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
     public static InventoryUI Instance;
-
     public ItemDatabase database;
     public List<InventorySlotUI> slots; // arraste os 5 slots aqui, na ordem
 
@@ -20,6 +19,8 @@ public class InventoryUI : MonoBehaviour
 
     public void AtualizarUI()
     {
+        Debug.Log("AtualizarUI foi chamado!");
+
         List<InventoryItem> inventario = GameManager.Instance.currentData.inventory;
 
         for (int i = 0; i < slots.Count; i++)
@@ -29,6 +30,8 @@ public class InventoryUI : MonoBehaviour
             if (dados != null && dados.itemId != "")
             {
                 ItemData item = database.GetItem(dados.itemId);
+                Debug.Log($"Slot {i}: itemId='{dados.itemId}', item encontrado no database? {item != null}");
+
                 if (item != null)
                     slots[i].Preencher(item);
                 else
@@ -44,11 +47,9 @@ public class InventoryUI : MonoBehaviour
     public void TrocarItens(int indexA, int indexB)
     {
         var inventario = GameManager.Instance.currentData.inventory;
-
         InventoryItem temp = inventario[indexA];
         inventario[indexA] = inventario[indexB];
         inventario[indexB] = temp;
-
         AtualizarUI();
     }
 }
