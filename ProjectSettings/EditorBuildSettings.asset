@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sala1.unity
     guid: d24bd844b9b88e54ca92ce5d8bed70e8
+  - enabled: 1
+    path: Assets/Scenes/Sala2.unity
+    guid: 4c4d3ab3649e2f34a9583df794375d32
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
