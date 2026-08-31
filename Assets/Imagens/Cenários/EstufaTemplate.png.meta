@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4abb6df3b3d55c740b984c4cdf54373b
+guid: aac3ca0f69e852445943baa6b8b69df1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3639682162481206047
-    second: SetaEsquerda_0
+      213: 7267527498314420117
+    second: EstufaTemplate_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SetaEsquerda_0
+      name: EstufaTemplate_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 500
-        height: 376
+        width: 1152
+        height: 648
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ec6bf96b504d7dc0800000000000000
-      internalID: -3639682162481206047
+      spriteID: 59f0a6431c17bd460800000000000000
+      internalID: 7267527498314420117
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      SetaEsquerda_0: -3639682162481206047
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
