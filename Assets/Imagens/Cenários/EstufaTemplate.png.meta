@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      EstufaTemplate_0: 7267527498314420117
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

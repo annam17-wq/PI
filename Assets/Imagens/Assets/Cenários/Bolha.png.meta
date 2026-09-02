@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 59709495b0d33864998326f81c246f6e
+guid: b899edcec5a4fb942b0dee9ed77d7947
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7181956285039072419
-    second: BarTemplate_0
+      213: -1457559781235916634
+    second: Bolha_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BarTemplate_0
+      name: Bolha_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1152
-        height: 648
+        width: 59
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d5bacd57fc0945c90800000000000000
-      internalID: -7181956285039072419
+      spriteID: 6a08988f915b5cbe0800000000000000
+      internalID: -1457559781235916634
       vertices: []
       indices: 
       edges: []
@@ -149,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -157,7 +157,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BarTemplate_0: -7181956285039072419
+      Bolha_0: -1457559781235916634
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

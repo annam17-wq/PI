@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AquarioTemplate_0: -4522890837221430792
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
