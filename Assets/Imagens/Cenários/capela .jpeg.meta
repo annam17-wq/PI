@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8ecebb6d5edfe7441863ebf44d6cf2ec
+guid: e3f70b41398ba2d469485e42e61e8bdb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5430744643695723907
-    second: RoyalGramma_0
+      213: -1910196677851805422
+    second: capela _0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RoyalGramma_0
+      name: capela _0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 214
-        height: 98
+        width: 1500
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d7a39a6158e12a4b0800000000000000
-      internalID: -5430744643695723907
+      spriteID: 219038dfd3e9d75e0800000000000000
+      internalID: -1910196677851805422
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      RoyalGramma_0: -5430744643695723907
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
