@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6d8d4c4ee6b2147acb8305c3fab293, type: 3}
   m_Name: Mao
   m_EditorClassIdentifier: 
-  itemId: Paid
-  nomeExibido: Pa
-  icone: {fileID: -1212710622670703222, guid: 10d579639b0bcdd4d8afb6c53f546b72, type: 3}
+  itemId: Maoid
+  nomeExibido: Mao
+  icone: {fileID: -6320342857104450991, guid: 0b8dc82622dfa0a4eb99c414a63b9475, type: 3}
