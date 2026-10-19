@@ -19,10 +19,37 @@ public class BrilhoOverlay : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
+        }
+
+        ConfigurarOverlay();
+    }
+
+    void ConfigurarOverlay()
+    {
+        // Canvas em Overlay: cobre a janela inteira, independente da câmera/letterbox
+        Canvas canvas = GetComponentInParent<Canvas>();
+        if (canvas == null) canvas = GetComponent<Canvas>();
+
+        if (canvas != null)
+        {
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.overrideSorting = true;
+            canvas.sortingOrder = 999; // fica por cima de tudo
         }
 
         if (painelBrilho != null)
+        {
             painelBrilho.raycastTarget = false;
+
+            // Estica o Image para preencher o Canvas inteiro
+            RectTransform rt = painelBrilho.rectTransform;
+            rt.anchorMin = Vector2.zero;
+            rt.anchorMax = Vector2.one;
+            rt.offsetMin = Vector2.zero;
+            rt.offsetMax = Vector2.zero;
+            rt.localScale = Vector3.one;
+        }
     }
 
     void Start()
@@ -42,7 +69,7 @@ public class BrilhoOverlay : MonoBehaviour
 
     public void AtualizarBrilho(float valor, bool instantaneo = false)
     {
-        alphaAlvo = 1f - valor; // ajuste essa fórmula igual você já usava (considerando maxValue do slider)
+        alphaAlvo = 1f - valor;
 
         if (instantaneo && painelBrilho != null)
         {

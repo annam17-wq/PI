@@ -25,7 +25,8 @@ public class InventoryUI : MonoBehaviour
 
         for (int i = 0; i < slots.Count; i++)
         {
-            InventoryItem dados = inventario[i];
+            // Protege contra inventário menor que a quantidade de slots
+            InventoryItem dados = i < inventario.Count ? inventario[i] : null;
 
             if (dados != null && dados.itemId != "")
             {

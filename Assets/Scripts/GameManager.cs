@@ -33,16 +33,13 @@ public class GameManager : MonoBehaviour
             currentData.inventory = new List<InventoryItem>();
         }
 
-        // Garante que existam slots vazios
-        if (currentData.inventory.Count == 0)
+        // Garante que existam pelo menos 20 slots (também completa saves antigos)
+        while (currentData.inventory.Count < 20)
         {
-            for (int i = 0; i < 20; i++)
+            currentData.inventory.Add(new InventoryItem
             {
-                currentData.inventory.Add(new InventoryItem
-                {
-                    itemId = ""
-                });
-            }
+                itemId = ""
+            });
         }
 
         Debug.Log("GameManager inicializado. Slots: " +

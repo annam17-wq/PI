@@ -1,82 +1,411 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class ItemPickup : MonoBehaviour, IPointerClickHandler
+public class ItemPickup : MonoBehaviour,
+    IPointerClickHandler, IDropHandler,
+    IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [Tooltip("Precisa ser exatamente igual ao itemId cadastrado no ItemData")]
+    public enum ModoInteracao
+    {
+        ColetarEDesaparecer,
+        TrocarSpriteAoClicar,
+        TrocarSpriteAoReceberItem,
+        ApenasArrastar // ícones do inventário: só servem para ser arrastados
+    }
+
+    [Header("Modo")]
+    public ModoInteracao modo = ModoInteracao.ColetarEDesaparecer;
+
+    [Header("Identificação")]
+    [Tooltip("Coletar: igual ao itemId do ItemData. Arrastar: id que este objeto representa (ex.: Facaid)")]
     public string itemId;
+
+    [Header("Arrastar")]
+    [Tooltip("Marque nos objetos que o jogador pode arrastar até outros")]
+    public bool arrastavel = false;
+
+    [Tooltip("Se soltar em lugar errado, volta para onde estava")]
+    public bool voltarSeNaoUsado = true;
+
+    [Tooltip("Só para ícones do inventário (modo Apenas Arrastar): usado para descobrir qual item está no slot pelo ícone")]
+    public ItemDatabase database;
+
+    [Header("Condição")]
+    [Tooltip("Ao clicar: precisa estar no inventário. Ao receber: precisa ser o item arrastado. Vazio = qualquer/nenhum")]
+    public string itemRequerido;
+
+    [Tooltip("Consome o item requerido depois de usar")]
+    public bool consumirItemRequerido = false;
+
+    [Tooltip("Impede repetir a interação depois da primeira vez")]
+    public bool trocarApenasUmaVez = true;
+
+    [Header("Resultado: Trocar Sprite")]
+    public bool trocarSprite = true;
+
+    [Tooltip("Sprite que vai substituir o atual (ex.: urso sem cabeça)")]
+    public Sprite spriteNovo;
+
+    [Header("Resultado: Dar Item")]
+    [Tooltip("Adiciona um item ao inventário quando a interação der certo")]
+    public bool darItemAoUsar = false;
+
+    [Tooltip("itemId do item que será adicionado (precisa existir no ItemDatabase)")]
+    public string itemRecompensaId;
+
+    [Header("Segunda etapa (clique depois da primeira troca)")]
+    [Tooltip("Depois da 1ª troca, clicar no objeto faz a 2ª troca (modo Trocar Sprite Ao Receber Item)")]
+    public bool segundaEtapaAoClicar = false;
+
+    [Tooltip("Sprite que aparece na 2ª troca")]
+    public Sprite spriteNovo2;
+
+    [Tooltip("Dá um item ao inventário na 2ª etapa")]
+    public bool darItemNaSegundaEtapa = false;
+
+    [Tooltip("itemId do item dado na 2ª etapa (precisa existir no ItemDatabase)")]
+    public string itemRecompensa2Id;
+
+    // Troca de sprite
+    private bool jaTrocou;
+    private bool jaTrocou2;
+    private SpriteRenderer spriteRenderer;
+    private Image imagemUI;
+    private RawImage rawImageUI;
+
+    // Arrastar
+    private RectTransform rect;
+    private Canvas canvas;
+    private CanvasGroup canvasGroup;
+    private Collider2D col2D;
+    private Camera cam;
+    private Transform paiOriginal;
+    private int indiceOriginal;
+    private Vector3 posicaoOriginal;
+    private float zTela;
+    private bool foiConsumido;
+    private bool arrastando;
+
+    void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        imagemUI = GetComponent<Image>();
+        rawImageUI = GetComponent<RawImage>();
+        rect = transform as RectTransform;
+        canvas = GetComponentInParent<Canvas>();
+        col2D = GetComponent<Collider2D>();
+        cam = Camera.main;
+
+        // No UI, o CanvasGroup evita que o item arrastado bloqueie o raycast do alvo
+        if (arrastavel && GetComponent<Graphic>() != null)
+        {
+            canvasGroup = GetComponent<CanvasGroup>();
+            if (canvasGroup == null) canvasGroup = gameObject.AddComponent<CanvasGroup>();
+        }
+    }
 
     void Start()
     {
-        // Verifica se o GameManager existe.
         if (GameManager.Instance == null)
         {
-            Debug.LogError(
-                $"[{gameObject.name}] GameManager.Instance é null! " +
-                "Verifique se existe um GameManager ativo na cena.",
-                this
-            );
-
+            Debug.LogError($"[{gameObject.name}] GameManager.Instance é null!", this);
             enabled = false;
             return;
         }
 
-        // Verifica se os dados do jogo foram inicializados.
         if (GameManager.Instance.currentData == null)
         {
-            Debug.LogError(
-                $"[{gameObject.name}] currentData está null!",
-                this
-            );
-
+            Debug.LogError($"[{gameObject.name}] currentData está null!", this);
             enabled = false;
             return;
         }
 
-        // Verifica se o inventário foi inicializado.
         if (GameManager.Instance.currentData.inventory == null)
         {
-            Debug.LogError(
-                $"[{gameObject.name}] inventory está null!",
-                this
-            );
-
+            Debug.LogError($"[{gameObject.name}] inventory está null!", this);
             enabled = false;
             return;
         }
 
-        // Se já foi coletado, não deve aparecer na cena.
-        if (JaFoiColetado())
-        {
+        if (modo == ModoInteracao.ColetarEDesaparecer && ItemEstaNoInventario(itemId))
             gameObject.SetActive(false);
+    }
+
+    // ---------- Clique ----------
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (GameManager.Instance == null) return;
+
+        switch (modo)
+        {
+            case ModoInteracao.ColetarEDesaparecer:
+                if (GameManager.Instance.AddItem(itemId))
+                {
+                    Debug.Log($"Item coletado: {itemId}");
+                    gameObject.SetActive(false);
+                }
+                break;
+
+            case ModoInteracao.TrocarSpriteAoClicar:
+                if (!string.IsNullOrEmpty(itemRequerido) && !ItemEstaNoInventario(itemRequerido))
+                {
+                    Debug.Log($"Falta o item necessário: {itemRequerido}");
+                    return;
+                }
+
+                ExecutarResultado(itemRequerido);
+                break;
+
+            case ModoInteracao.TrocarSpriteAoReceberItem:
+                // Só funciona depois que a primeira troca já aconteceu
+                if (!segundaEtapaAoClicar || !jaTrocou || jaTrocou2) return;
+                ExecutarSegundaEtapa();
+                break;
         }
     }
 
-    private bool JaFoiColetado()
+    // ---------- Este objeto recebe um item arrastado ----------
+    public void OnDrop(PointerEventData eventData)
     {
-        var inventario = GameManager.Instance.currentData.inventory;
+        Debug.Log($"[{name}] OnDrop recebido. modo={modo}, pointerDrag={eventData.pointerDrag}");
 
-        return inventario.Exists(
-            i => i != null && i.itemId == itemId
-        );
-    }
+        if (modo != ModoInteracao.TrocarSpriteAoReceberItem) return;
+        if (eventData.pointerDrag == null) return;
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        // Impede a coleta se o GameManager não estiver disponível.
-        if (GameManager.Instance == null)
+        ItemPickup item = eventData.pointerDrag.GetComponent<ItemPickup>();
+        if (item == null || !item.arrastavel)
         {
-            Debug.LogError("Não foi possível coletar: GameManager está null!");
+            Debug.Log("O objeto solto não tem ItemPickup arrastável.");
             return;
         }
 
-        // Tenta adicionar o item ao inventário.
-        bool coletou = GameManager.Instance.AddItem(itemId);
-
-        if (coletou)
+        // Item errado: não faz nada (ele volta sozinho para o lugar)
+        if (!string.IsNullOrEmpty(itemRequerido) && item.itemId != itemRequerido)
         {
-            Debug.Log($"Item coletado: {itemId}");
-            gameObject.SetActive(false);
+            Debug.Log($"Item errado: '{item.itemId}' (esperado: '{itemRequerido}')");
+            return;
+        }
+
+        if (ExecutarResultado(item.itemId) && consumirItemRequerido)
+            item.foiConsumido = true;
+    }
+
+    // ---------- Este objeto é arrastado ----------
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        Debug.Log($"[{name}] OnBeginDrag. arrastavel={arrastavel}, modo={modo}");
+
+        if (!arrastavel) return;
+
+        if (modo == ModoInteracao.ApenasArrastar)
+        {
+            ResolverIdPeloIcone();
+
+            if (string.IsNullOrEmpty(itemId))
+            {
+                Debug.LogWarning(
+                    $"[{name}] Não achei o item deste slot. " +
+                    "Confira o campo Database e se o 'icone' do ItemData é o mesmo sprite do slot.", this);
+                return;
+            }
+        }
+
+        arrastando = true;
+        foiConsumido = false;
+        paiOriginal = transform.parent;
+        indiceOriginal = transform.GetSiblingIndex();
+        posicaoOriginal = transform.position;
+
+        if (canvasGroup != null)
+        {
+            canvasGroup.blocksRaycasts = false;
+            if (canvas != null) transform.SetParent(canvas.rootCanvas.transform, true);
+            transform.SetAsLastSibling();
+        }
+        else
+        {
+            if (col2D != null) col2D.enabled = false;
+            if (cam != null) zTela = cam.WorldToScreenPoint(transform.position).z;
+        }
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (!arrastando) return;
+
+        if (canvasGroup != null && rect != null)
+        {
+            Camera camCanvas = canvas != null && canvas.renderMode != RenderMode.ScreenSpaceOverlay
+                ? canvas.worldCamera : null;
+
+            if (RectTransformUtility.ScreenPointToWorldPointInRectangle(
+                    rect, eventData.position, camCanvas, out Vector3 pos))
+            {
+                transform.position = pos;
+            }
+        }
+        else if (cam != null)
+        {
+            Vector3 p = new Vector3(eventData.position.x, eventData.position.y, zTela);
+            transform.position = cam.ScreenToWorldPoint(p);
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (!arrastando) return;
+        arrastando = false;
+
+        if (canvasGroup != null) canvasGroup.blocksRaycasts = true;
+        if (col2D != null) col2D.enabled = true;
+
+        // Se foi consumido, o objeto some; senão volta (se configurado)
+        if (foiConsumido || voltarSeNaoUsado)
+        {
+            if (canvasGroup != null)
+            {
+                transform.SetParent(paiOriginal, true);
+                transform.SetSiblingIndex(indiceOriginal);
+            }
+            transform.position = posicaoOriginal;
+        }
+
+        if (foiConsumido)
+        {
+            if (modo == ModoInteracao.ApenasArrastar && imagemUI != null)
+            {
+                // Esvazia o slot visualmente, igual aos slots vazios
+                imagemUI.enabled = false;
+                itemId = "";
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+        }
+    }
+
+    // ---------- Resultado da interação ----------
+    // idUsado = item que foi usado (arrastado ou exigido no inventário)
+    private bool ExecutarResultado(string idUsado)
+    {
+        if (trocarApenasUmaVez && jaTrocou) return false;
+
+        if (trocarSprite && !AplicarSprite(spriteNovo)) return false;
+
+        // Consome primeiro, para liberar espaço antes de dar o novo item
+        if (consumirItemRequerido)
+            RemoverDoInventario(idUsado);
+
+        if (darItemAoUsar)
+            DarItemRecompensa();
+
+        jaTrocou = true;
+        return true;
+    }
+
+    // ---------- Segunda etapa (clique depois da primeira troca) ----------
+    private void ExecutarSegundaEtapa()
+    {
+        // Dá o item primeiro: se o inventário estiver cheio, nada muda e dá para tentar de novo
+        if (darItemNaSegundaEtapa)
+        {
+            if (string.IsNullOrEmpty(itemRecompensa2Id))
+            {
+                Debug.LogWarning($"[{gameObject.name}] itemRecompensa2Id está vazio!", this);
+                return;
+            }
+
+            if (!GameManager.Instance.AddItem(itemRecompensa2Id))
+            {
+                Debug.LogWarning($"Não foi possível adicionar '{itemRecompensa2Id}' ao inventário.", this);
+                return;
+            }
+
+            Debug.Log($"Item recebido: {itemRecompensa2Id}");
+        }
+
+        if (spriteNovo2 != null) AplicarSprite(spriteNovo2);
+
+        jaTrocou2 = true;
+    }
+
+    private bool AplicarSprite(Sprite sprite)
+    {
+        if (sprite == null)
+        {
+            Debug.LogWarning($"[{gameObject.name}] sprite não foi definido!", this);
+            return false;
+        }
+
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.sprite = sprite;
+        }
+        else if (imagemUI != null)
+        {
+            imagemUI.sprite = sprite;
+        }
+        else if (rawImageUI != null)
+        {
+            // RawImage usa Texture + UV Rect em vez de Sprite
+            Texture tex = sprite.texture;
+            Rect r = sprite.textureRect;
+            rawImageUI.texture = tex;
+            rawImageUI.uvRect = new Rect(
+                r.x / tex.width, r.y / tex.height,
+                r.width / tex.width, r.height / tex.height);
+        }
+        else
+        {
+            Debug.LogError($"[{gameObject.name}] Precisa de SpriteRenderer, Image ou RawImage!", this);
+            return false;
+        }
+
+        Debug.Log($"Sprite de {gameObject.name} trocado.");
+        return true;
+    }
+
+    private void DarItemRecompensa()
+    {
+        if (string.IsNullOrEmpty(itemRecompensaId))
+        {
+            Debug.LogWarning($"[{gameObject.name}] itemRecompensaId está vazio!", this);
+            return;
+        }
+
+        if (GameManager.Instance.AddItem(itemRecompensaId))
+            Debug.Log($"Item recebido: {itemRecompensaId}");
+        else
+            Debug.LogWarning($"Não foi possível adicionar '{itemRecompensaId}' ao inventário.", this);
+    }
+
+    // Descobre qual item está no slot comparando o sprite do ícone com o ItemDatabase
+    private void ResolverIdPeloIcone()
+    {
+        if (database == null || database.itens == null || imagemUI == null) return;
+
+        ItemData data = database.itens.Find(i => i != null && i.icone == imagemUI.sprite);
+        itemId = data != null ? data.itemId : "";
+    }
+
+    private bool ItemEstaNoInventario(string id)
+    {
+        if (string.IsNullOrEmpty(id)) return false;
+        return GameManager.Instance.currentData.inventory
+            .Exists(i => i != null && i.itemId == id);
+    }
+
+    private void RemoverDoInventario(string id)
+    {
+        if (string.IsNullOrEmpty(id)) return;
+
+        // Esvazia o slot em vez de remover da lista, para o tamanho do inventário não mudar
+        foreach (var item in GameManager.Instance.currentData.inventory)
+        {
+            if (item != null && item.itemId == id)
+                item.itemId = "";
         }
     }
 }
