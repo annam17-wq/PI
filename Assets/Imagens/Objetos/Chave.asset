@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6d8d4c4ee6b2147acb8305c3fab293, type: 3}
   m_Name: Chave
   m_EditorClassIdentifier: 
-  itemId: ChaveP
+  itemId: ChavePid
   nomeExibido: Chave Garrafa
   icone: {fileID: -1217081429069890136, guid: d5eaf887173a3644aaa28d5bc158fc42, type: 3}

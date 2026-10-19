@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e98e7a4ab3a5d174a8093b896b669dce
+guid: 63bae24604e56f643be6a5a2d05beb52
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1004150863111845676
-    second: Boneca (3)_0
+      213: -3115023564750544959
+    second: Guardanapo 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boneca (3)_0
+      name: Guardanapo 1_0
       rect:
         serializedVersion: 2
-        x: 59
-        y: 0
-        width: 202
-        height: 271
+        x: 0
+        y: 12
+        width: 64
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c27fea8c3e57fed00800000000000000
-      internalID: 1004150863111845676
+      spriteID: 1cf921c629635c4d0800000000000000
+      internalID: -3115023564750544959
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Boneca (3)_0: 1004150863111845676
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

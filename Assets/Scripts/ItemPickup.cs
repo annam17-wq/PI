@@ -67,7 +67,19 @@ public class ItemPickup : MonoBehaviour,
     [Tooltip("itemId do item dado na 2ª etapa (precisa existir no ItemDatabase)")]
     public string itemRecompensa2Id;
 
+    [Header("Transparência")]
+    [Tooltip("Ao interagir com sucesso, o objeto fica 100% visível (alpha = 1). Útil para objetos que começam invisíveis")]
+    public bool tornarOpacoAoInteragir = false;
+
+    [Header("Limite de usos")]
+    [Tooltip("Depois de usado X vezes, o objeto desaparece. Quando ligado, ignora 'Trocar Apenas Uma Vez'")]
+    public bool limitarUsos = false;
+
+    [Tooltip("Quantas vezes o objeto pode ser usado antes de sumir")]
+    [Min(1)] public int quantidadeDeUsos = 1;
+
     // Troca de sprite
+    private int usosFeitos;
     private bool jaTrocou;
     private bool jaTrocou2;
     private SpriteRenderer spriteRenderer;
@@ -290,9 +302,18 @@ public class ItemPickup : MonoBehaviour,
     // idUsado = item que foi usado (arrastado ou exigido no inventário)
     private bool ExecutarResultado(string idUsado)
     {
-        if (trocarApenasUmaVez && jaTrocou) return false;
+        if (limitarUsos)
+        {
+            if (usosFeitos >= quantidadeDeUsos) return false;
+        }
+        else if (trocarApenasUmaVez && jaTrocou)
+        {
+            return false;
+        }
 
         if (trocarSprite && !AplicarSprite(spriteNovo)) return false;
+
+        if (tornarOpacoAoInteragir) TornarOpaco();
 
         // Consome primeiro, para liberar espaço antes de dar o novo item
         if (consumirItemRequerido)
@@ -302,7 +323,22 @@ public class ItemPickup : MonoBehaviour,
             DarItemRecompensa();
 
         jaTrocou = true;
+        usosFeitos++;
+
+        // Com segunda etapa, o objeto só some depois dela
+        if (!segundaEtapaAoClicar) VerificarLimiteDeUsos();
+
         return true;
+    }
+
+    // Some quando o número de usos chega ao limite
+    private void VerificarLimiteDeUsos()
+    {
+        if (limitarUsos && usosFeitos >= quantidadeDeUsos)
+        {
+            Debug.Log($"[{gameObject.name}] atingiu {quantidadeDeUsos} uso(s) e desapareceu.");
+            gameObject.SetActive(false);
+        }
     }
 
     // ---------- Segunda etapa (clique depois da primeira troca) ----------
@@ -328,7 +364,40 @@ public class ItemPickup : MonoBehaviour,
 
         if (spriteNovo2 != null) AplicarSprite(spriteNovo2);
 
+        if (tornarOpacoAoInteragir) TornarOpaco();
+
         jaTrocou2 = true;
+
+        VerificarLimiteDeUsos();
+    }
+
+    // Deixa o objeto 100% visível (alpha = 1), mantendo a cor atual
+    private void TornarOpaco()
+    {
+        if (spriteRenderer != null)
+        {
+            Color c = spriteRenderer.color;
+            c.a = 1f;
+            spriteRenderer.color = c;
+        }
+
+        if (imagemUI != null)
+        {
+            Color c = imagemUI.color;
+            c.a = 1f;
+            imagemUI.color = c;
+        }
+
+        if (rawImageUI != null)
+        {
+            Color c = rawImageUI.color;
+            c.a = 1f;
+            rawImageUI.color = c;
+        }
+
+        // Se o objeto tiver um CanvasGroup (que também controla a transparência)
+        CanvasGroup grupo = GetComponent<CanvasGroup>();
+        if (grupo != null) grupo.alpha = 1f;
     }
 
     private bool AplicarSprite(Sprite sprite)

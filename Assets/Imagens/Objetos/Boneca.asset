@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: Bonecaid
   nomeExibido: Boneca
-  icone: {fileID: 1004150863111845676, guid: e98e7a4ab3a5d174a8093b896b669dce, type: 3}
+  icone: {fileID: 7559902752613200558, guid: fe5f0498de80eb544ba8b4d651158f7f, type: 3}

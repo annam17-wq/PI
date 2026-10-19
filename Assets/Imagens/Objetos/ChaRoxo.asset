@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: ChaRoxoid
   nomeExibido: ChaRoxo
-  icone: {fileID: -8703008482797655271, guid: 276d37bdbf5824a4588e2a05e238070c, type: 3}
+  icone: {fileID: 6568394996420521022, guid: dc94abfaab4a1c747bf8030e55a2daac, type: 3}
