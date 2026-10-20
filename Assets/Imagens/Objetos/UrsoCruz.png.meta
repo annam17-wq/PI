@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UrsoCruz_0: -8057459109915091580
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

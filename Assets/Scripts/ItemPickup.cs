@@ -71,6 +71,13 @@ public class ItemPickup : MonoBehaviour,
     [Tooltip("Ao interagir com sucesso, o objeto fica 100% visível (alpha = 1). Útil para objetos que começam invisíveis")]
     public bool tornarOpacoAoInteragir = false;
 
+    [Header("Requisito de outro objeto")]
+    [Tooltip("Este objeto só funciona depois que o objeto indicado já foi usado com sucesso (ex.: o 'lugar vara' só funciona depois do 'lugar escada')")]
+    public ItemPickup precisaTerUsado;
+
+    // Outros objetos consultam isto para saber se a interação já aconteceu
+    public bool InteracaoConcluida => jaTrocou;
+
     [Header("Limite de usos")]
     [Tooltip("Depois de usado X vezes, o objeto desaparece. Quando ligado, ignora 'Trocar Apenas Uma Vez'")]
     public bool limitarUsos = false;
@@ -78,8 +85,19 @@ public class ItemPickup : MonoBehaviour,
     [Tooltip("Quantas vezes o objeto pode ser usado antes de sumir")]
     [Min(1)] public int quantidadeDeUsos = 1;
 
+    [Tooltip("Com 'Consumir Item Requerido' ligado: o item só sai do inventário no ÚLTIMO uso (ex.: a vara some depois do 2º peixe). Desligado: sai já no 1º uso")]
+    public bool consumirSoNoUltimoUso = false;
+
+    [Header("Esconder outros objetos")]
+    [Tooltip("Objetos da cena que somem quando a interação der certo (ex.: os peixes pescados)")]
+    public GameObject[] objetosParaEsconder;
+
+    [Tooltip("Desligado: cada uso esconde o PRÓXIMO da lista (uso 1 = elemento 0, uso 2 = elemento 1...). Ligado: o primeiro uso esconde todos")]
+    public bool esconderTodosDeUmaVez = false;
+
     // Troca de sprite
     private int usosFeitos;
+    private bool consumiuNoUltimoResultado;
     private bool jaTrocou;
     private bool jaTrocou2;
     private SpriteRenderer spriteRenderer;
@@ -199,7 +217,7 @@ public class ItemPickup : MonoBehaviour,
             return;
         }
 
-        if (ExecutarResultado(item.itemId) && consumirItemRequerido)
+        if (ExecutarResultado(item.itemId) && consumiuNoUltimoResultado)
             item.foiConsumido = true;
     }
 
@@ -290,6 +308,10 @@ public class ItemPickup : MonoBehaviour,
                 // Esvazia o slot visualmente, igual aos slots vazios
                 imagemUI.enabled = false;
                 itemId = "";
+
+                // Redesenha o inventário a partir dos dados: se um item novo caiu neste
+                // mesmo slot (ex.: o peixe no lugar da vara), ele reaparece em vez de ficar escondido
+                if (InventoryUI.Instance != null) InventoryUI.Instance.AtualizarUI();
             }
             else
             {
@@ -302,6 +324,8 @@ public class ItemPickup : MonoBehaviour,
     // idUsado = item que foi usado (arrastado ou exigido no inventário)
     private bool ExecutarResultado(string idUsado)
     {
+        if (!RequisitoCumprido()) return false;
+
         if (limitarUsos)
         {
             if (usosFeitos >= quantidadeDeUsos) return false;
@@ -316,7 +340,8 @@ public class ItemPickup : MonoBehaviour,
         if (tornarOpacoAoInteragir) TornarOpaco();
 
         // Consome primeiro, para liberar espaço antes de dar o novo item
-        if (consumirItemRequerido)
+        consumiuNoUltimoResultado = DeveConsumirNesteUso();
+        if (consumiuNoUltimoResultado)
             RemoverDoInventario(idUsado);
 
         if (darItemAoUsar)
@@ -325,10 +350,54 @@ public class ItemPickup : MonoBehaviour,
         jaTrocou = true;
         usosFeitos++;
 
+        EsconderObjetosDoUso();
+
         // Com segunda etapa, o objeto só some depois dela
         if (!segundaEtapaAoClicar) VerificarLimiteDeUsos();
 
         return true;
+    }
+
+    // Decide se o item requerido sai do inventário neste uso (chamado antes de contar o uso)
+    private bool DeveConsumirNesteUso()
+    {
+        if (!consumirItemRequerido) return false;
+
+        if (limitarUsos && consumirSoNoUltimoUso)
+            return usosFeitos + 1 >= quantidadeDeUsos;
+
+        return true;
+    }
+
+    // Verifica se o objeto exigido já foi usado (sem exigência = sempre liberado)
+    private bool RequisitoCumprido()
+    {
+        if (precisaTerUsado == null) return true;
+
+        if (!precisaTerUsado.InteracaoConcluida)
+        {
+            Debug.Log($"[{gameObject.name}] ainda não liberado: precisa usar '{precisaTerUsado.name}' primeiro.");
+            return false;
+        }
+
+        return true;
+    }
+
+    // Esconde os objetos da lista (um por uso, ou todos de uma vez)
+    private void EsconderObjetosDoUso()
+    {
+        if (objetosParaEsconder == null || objetosParaEsconder.Length == 0) return;
+
+        if (esconderTodosDeUmaVez)
+        {
+            foreach (GameObject obj in objetosParaEsconder)
+                if (obj != null) obj.SetActive(false);
+            return;
+        }
+
+        int indice = usosFeitos - 1;
+        if (indice >= 0 && indice < objetosParaEsconder.Length && objetosParaEsconder[indice] != null)
+            objetosParaEsconder[indice].SetActive(false);
     }
 
     // Some quando o número de usos chega ao limite
@@ -344,6 +413,8 @@ public class ItemPickup : MonoBehaviour,
     // ---------- Segunda etapa (clique depois da primeira troca) ----------
     private void ExecutarSegundaEtapa()
     {
+        if (!RequisitoCumprido()) return;
+
         // Dá o item primeiro: se o inventário estiver cheio, nada muda e dá para tentar de novo
         if (darItemNaSegundaEtapa)
         {

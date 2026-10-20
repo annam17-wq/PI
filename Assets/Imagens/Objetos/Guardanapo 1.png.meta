@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Guardanapo 1_0: -3115023564750544959
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

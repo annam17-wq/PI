@@ -36,6 +36,9 @@ public class InventorySlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     {
         if (!icone.enabled) return;
 
+        // Slots criados em tempo de execução (gaveta extra) podem precisar buscar o Canvas aqui
+        if (canvasRaiz == null) canvasRaiz = GetComponentInParent<Canvas>();
+
         paiOriginal = icone.transform.parent;
         icone.transform.SetParent(canvasRaiz.transform);
         icone.transform.SetAsLastSibling();

@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Boneca_0: 7559902752613200558
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

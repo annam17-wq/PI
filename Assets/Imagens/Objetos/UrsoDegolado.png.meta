@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UrsoDegolado_0: -5745873591209706720
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
