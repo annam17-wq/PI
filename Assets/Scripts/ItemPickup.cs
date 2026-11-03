@@ -95,6 +95,10 @@ public class ItemPickup : MonoBehaviour,
     [Tooltip("Desligado: cada uso esconde o PRÓXIMO da lista (uso 1 = elemento 0, uso 2 = elemento 1...). Ligado: o primeiro uso esconde todos")]
     public bool esconderTodosDeUmaVez = false;
 
+    [Header("Mostrar outros objetos")]
+    [Tooltip("Objetos que começam DESATIVADOS na cena e aparecem quando a interação der certo (ex.: a pá e a vara dentro do baú aberto)")]
+    public GameObject[] objetosParaMostrar;
+
     // Troca de sprite
     private int usosFeitos;
     private bool consumiuNoUltimoResultado;
@@ -128,11 +132,20 @@ public class ItemPickup : MonoBehaviour,
         cam = Camera.main;
 
         // No UI, o CanvasGroup evita que o item arrastado bloqueie o raycast do alvo
-        if (arrastavel && GetComponent<Graphic>() != null)
-        {
-            canvasGroup = GetComponent<CanvasGroup>();
-            if (canvasGroup == null) canvasGroup = gameObject.AddComponent<CanvasGroup>();
-        }
+        GarantirCanvasGroup();
+    }
+
+    // Cria o CanvasGroup se for um objeto de UI arrastável.
+    // Também é chamado no início do arrasto, porque os ícones do inventário
+    // têm 'arrastavel' ligado por código DEPOIS do Awake.
+    private void GarantirCanvasGroup()
+    {
+        if (canvasGroup != null) return;
+        if (!arrastavel) return;
+        if (GetComponent<Graphic>() == null) return;
+
+        canvasGroup = GetComponent<CanvasGroup>();
+        if (canvasGroup == null) canvasGroup = gameObject.AddComponent<CanvasGroup>();
     }
 
     void Start()
@@ -240,6 +253,10 @@ public class ItemPickup : MonoBehaviour,
                 return;
             }
         }
+
+        // Garante que o item arrastado não bloqueie o raycast do alvo
+        if (canvas == null) canvas = GetComponentInParent<Canvas>();
+        GarantirCanvasGroup();
 
         arrastando = true;
         foiConsumido = false;
@@ -351,6 +368,7 @@ public class ItemPickup : MonoBehaviour,
         usosFeitos++;
 
         EsconderObjetosDoUso();
+        MostrarObjetos();
 
         // Com segunda etapa, o objeto só some depois dela
         if (!segundaEtapaAoClicar) VerificarLimiteDeUsos();
@@ -398,6 +416,15 @@ public class ItemPickup : MonoBehaviour,
         int indice = usosFeitos - 1;
         if (indice >= 0 && indice < objetosParaEsconder.Length && objetosParaEsconder[indice] != null)
             objetosParaEsconder[indice].SetActive(false);
+    }
+
+    // Ativa os objetos da lista (que começam desativados na cena)
+    private void MostrarObjetos()
+    {
+        if (objetosParaMostrar == null) return;
+
+        foreach (GameObject obj in objetosParaMostrar)
+            if (obj != null) obj.SetActive(true);
     }
 
     // Some quando o número de usos chega ao limite

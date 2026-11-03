@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bd6407b896cfdf545bd5fa48217cc8e2
+guid: 7d25e5d60d0514b43b18cc14fbb6de4d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3167277614115111231
-    second: Bau_0
+      213: -723550339613106669
+    second: NovoBauFechado (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bau_0
+      name: NovoBauFechado (1)_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 6
-        width: 49
-        height: 42
+        x: 36
+        y: 29
+        width: 38
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ce3f997ac19b04d0800000000000000
-      internalID: -3167277614115111231
+      spriteID: 31e5f36bcce65f5f0800000000000000
+      internalID: -723550339613106669
       vertices: []
       indices: 
       edges: []
@@ -157,7 +157,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bau_0: -3167277614115111231
+      NovoBauFechado (1)_0: -723550339613106669
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

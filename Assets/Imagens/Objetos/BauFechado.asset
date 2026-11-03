@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6d8d4c4ee6b2147acb8305c3fab293, type: 3}
+  m_Name: BauFechado
+  m_EditorClassIdentifier: 
+  itemId: BauFechadoid
+  nomeExibido: BauFechado
+  icone: {fileID: -723550339613106669, guid: 7d25e5d60d0514b43b18cc14fbb6de4d, type: 3}

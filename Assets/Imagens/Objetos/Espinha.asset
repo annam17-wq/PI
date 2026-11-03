@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d6d8d4c4ee6b2147acb8305c3fab293, type: 3}
-  m_Name: Chave
+  m_Name: Espinha
   m_EditorClassIdentifier: 
-  itemId: ChavePid
-  nomeExibido: Chave Garrafa
-  icone: {fileID: -1217081429069890136, guid: d5eaf887173a3644aaa28d5bc158fc42, type: 3}
+  itemId: Espinhaid
+  nomeExibido: Espinha
+  icone: {fileID: 6210733065497478629, guid: 554427e87073c874cbdbc2febfd83b35, type: 3}
