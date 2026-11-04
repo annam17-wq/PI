@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Espinha_0: 6210733065497478629
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
