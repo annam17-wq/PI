@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -35,6 +36,12 @@ public class ItemPickup : MonoBehaviour,
     [Tooltip("Ao clicar: precisa estar no inventário. Ao receber: precisa ser o item arrastado. Vazio = qualquer/nenhum")]
     public string itemRequerido;
 
+    [Tooltip("Itens requeridos ADICIONAIS (além do 'Item Requerido' acima)")]
+    public string[] itensRequeridosExtras;
+
+    [Tooltip("Ligado: precisa entregar TODOS os itens (um por vez, em qualquer ordem). Desligado: qualquer um deles já basta")]
+    public bool exigirTodosOsItens = true;
+
     [Tooltip("Consome o item requerido depois de usar")]
     public bool consumirItemRequerido = false;
 
@@ -57,6 +64,21 @@ public class ItemPickup : MonoBehaviour,
     [Header("Segunda etapa (clique depois da primeira troca)")]
     [Tooltip("Depois da 1ª troca, clicar no objeto faz a 2ª troca (modo Trocar Sprite Ao Receber Item)")]
     public bool segundaEtapaAoClicar = false;
+
+    [Tooltip("Ligado: a 2ª etapa só acontece se o jogador ARRASTAR o item até o objeto ou, ao CLICAR, tiver o item no inventário")]
+    public bool segundaEtapaExigeItem = false;
+
+    [Tooltip("Item requerido na 2ª etapa")]
+    public string itemRequerido2;
+
+    [Tooltip("Itens requeridos ADICIONAIS na 2ª etapa (além do 'Item Requerido 2')")]
+    public string[] itensRequeridos2Extras;
+
+    [Tooltip("Ligado: precisa de TODOS os itens da 2ª etapa. Desligado: qualquer um deles já basta")]
+    public bool exigirTodosOsItens2 = true;
+
+    [Tooltip("Consome o(s) item(ns) requerido(s) da 2ª etapa")]
+    public bool consumirItemRequerido2 = false;
 
     [Tooltip("Sprite que aparece na 2ª troca")]
     public Sprite spriteNovo2;
@@ -85,7 +107,7 @@ public class ItemPickup : MonoBehaviour,
     [Tooltip("Quantas vezes o objeto pode ser usado antes de sumir")]
     [Min(1)] public int quantidadeDeUsos = 1;
 
-    [Tooltip("Com 'Consumir Item Requerido' ligado: o item só sai do inventário no ÚLTIMO uso (ex.: a vara some depois do 2º peixe). Desligado: sai já no 1º uso")]
+    [Tooltip("Com 'Consumir Item Requerido' ligado: o item só sai do inventário no ÚLTIMO uso (ex.: a vara some depois do 2º peixe). Desligado: sai já no 1º uso. Não vale quando há vários itens requeridos por arrasto")]
     public bool consumirSoNoUltimoUso = false;
 
     [Header("Esconder outros objetos")]
@@ -107,6 +129,10 @@ public class ItemPickup : MonoBehaviour,
     private SpriteRenderer spriteRenderer;
     private Image imagemUI;
     private RawImage rawImageUI;
+
+    // Entregas parciais quando há vários itens requeridos (não é salvo)
+    private readonly HashSet<string> itensEntregues = new HashSet<string>();
+    private readonly HashSet<string> itensEntregues2 = new HashSet<string>();
 
     // Arrastar
     private RectTransform rect;
@@ -175,6 +201,53 @@ public class ItemPickup : MonoBehaviour,
             gameObject.SetActive(false);
     }
 
+    // Junta o itemRequerido com os extras numa lista só (1ª etapa)
+    private List<string> ObterRequeridos()
+    {
+        return MontarLista(itemRequerido, itensRequeridosExtras);
+    }
+
+    // Idem, para a 2ª etapa
+    private List<string> ObterRequeridos2()
+    {
+        return MontarLista(itemRequerido2, itensRequeridos2Extras);
+    }
+
+    private static List<string> MontarLista(string principal, string[] extras)
+    {
+        var lista = new List<string>();
+        if (!string.IsNullOrEmpty(principal)) lista.Add(principal);
+
+        if (extras != null)
+        {
+            foreach (string id in extras)
+                if (!string.IsNullOrEmpty(id) && !lista.Contains(id))
+                    lista.Add(id);
+        }
+
+        return lista;
+    }
+
+    // Confere se o inventário tem os itens exigidos. Devolve em 'usados' o que deve ser consumido.
+    private bool ConferirNoInventario(List<string> requeridos, bool exigirTodos, out string[] usados)
+    {
+        usados = System.Array.Empty<string>();
+        if (requeridos.Count == 0) return true;
+
+        if (exigirTodos)
+        {
+            if (!requeridos.TrueForAll(ItemEstaNoInventario)) return false;
+            usados = requeridos.ToArray();
+            return true;
+        }
+
+        string achado = requeridos.Find(ItemEstaNoInventario);
+        if (achado == null) return false;
+
+        usados = new[] { achado };
+        return true;
+    }
+
     // ---------- Clique ----------
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -191,20 +264,41 @@ public class ItemPickup : MonoBehaviour,
                 break;
 
             case ModoInteracao.TrocarSpriteAoClicar:
-                if (!string.IsNullOrEmpty(itemRequerido) && !ItemEstaNoInventario(itemRequerido))
                 {
-                    Debug.Log($"Falta o item necessário: {itemRequerido}");
-                    return;
+                    if (!ConferirNoInventario(ObterRequeridos(), exigirTodosOsItens, out string[] usados))
+                    {
+                        Debug.Log("Faltam itens necessários no inventário.");
+                        return;
+                    }
+
+                    ExecutarResultado(usados);
+                    break;
                 }
 
-                ExecutarResultado(itemRequerido);
-                break;
-
             case ModoInteracao.TrocarSpriteAoReceberItem:
-                // Só funciona depois que a primeira troca já aconteceu
-                if (!segundaEtapaAoClicar || !jaTrocou || jaTrocou2) return;
-                ExecutarSegundaEtapa();
-                break;
+                {
+                    // Só funciona depois que a primeira troca já aconteceu
+                    if (!segundaEtapaAoClicar || !jaTrocou || jaTrocou2) return;
+
+                    string[] usados2 = System.Array.Empty<string>();
+
+                    if (segundaEtapaExigeItem)
+                    {
+                        // O que já foi entregue por arrasto não precisa estar no inventário de novo
+                        List<string> requeridos2 = ObterRequeridos2();
+                        requeridos2.RemoveAll(id => itensEntregues2.Contains(id));
+
+                        if (!ConferirNoInventario(requeridos2, exigirTodosOsItens2, out usados2))
+                        {
+                            Debug.Log("Faltam itens necessários para a 2ª etapa.");
+                            return;
+                        }
+                    }
+
+                    if (ExecutarSegundaEtapa(usados2))
+                        itensEntregues2.Clear();
+                    break;
+                }
         }
     }
 
@@ -223,15 +317,121 @@ public class ItemPickup : MonoBehaviour,
             return;
         }
 
-        // Item errado: não faz nada (ele volta sozinho para o lugar)
-        if (!string.IsNullOrEmpty(itemRequerido) && item.itemId != itemRequerido)
+        // Já fez a 1ª troca e a 2ª etapa exige item: o item solto vale para a 2ª etapa
+        if (segundaEtapaAoClicar && segundaEtapaExigeItem && jaTrocou && !jaTrocou2)
         {
-            Debug.Log($"Item errado: '{item.itemId}' (esperado: '{itemRequerido}')");
+            ReceberItemSegundaEtapa(item);
             return;
         }
 
-        if (ExecutarResultado(item.itemId) && consumiuNoUltimoResultado)
+        List<string> requeridos = ObterRequeridos();
+
+        // Item errado: não faz nada (ele volta sozinho para o lugar)
+        if (requeridos.Count > 0 && !requeridos.Contains(item.itemId))
+        {
+            Debug.Log($"Item errado: '{item.itemId}'");
+            return;
+        }
+
+        bool precisaDeVarios = exigirTodosOsItens && requeridos.Count > 1;
+
+        // Caso simples: 0 ou 1 item, ou "qualquer um"
+        if (!precisaDeVarios)
+        {
+            if (ExecutarResultado(new[] { item.itemId }) && consumiuNoUltimoResultado)
+                item.foiConsumido = true;
+            return;
+        }
+
+        // Vários itens: guarda cada entrega até completar
+        if (!RequisitoCumprido()) return;
+
+        if (limitarUsos)
+        {
+            if (usosFeitos >= quantidadeDeUsos) return;
+        }
+        else if (trocarApenasUmaVez && jaTrocou)
+        {
+            return;
+        }
+
+        if (itensEntregues.Contains(item.itemId))
+        {
+            Debug.Log($"'{item.itemId}' já foi entregue aqui.");
+            return;
+        }
+
+        itensEntregues.Add(item.itemId);
+
+        if (consumirItemRequerido)
+        {
+            RemoverDoInventario(item.itemId);
             item.foiConsumido = true;
+        }
+
+        if (itensEntregues.Count < requeridos.Count)
+        {
+            Debug.Log($"Item '{item.itemId}' entregue ({itensEntregues.Count}/{requeridos.Count}).");
+            return;
+        }
+
+        // Todos entregues: dispara o efeito (os itens já foram consumidos acima)
+        if (ExecutarResultado(System.Array.Empty<string>()))
+            itensEntregues.Clear();
+    }
+
+    // Item arrastado até o objeto durante a 2ª etapa
+    private void ReceberItemSegundaEtapa(ItemPickup item)
+    {
+        List<string> requeridos = ObterRequeridos2();
+
+        if (requeridos.Count > 0 && !requeridos.Contains(item.itemId))
+        {
+            Debug.Log($"Item errado para a 2ª etapa: '{item.itemId}'");
+            return;
+        }
+
+        bool precisaDeVarios = exigirTodosOsItens2 && requeridos.Count > 1;
+
+        // Caso simples: 0 ou 1 item, ou "qualquer um"
+        if (!precisaDeVarios)
+        {
+            if (ExecutarSegundaEtapa(new[] { item.itemId }) && consumirItemRequerido2)
+                item.foiConsumido = true;
+            return;
+        }
+
+        // Vários itens: guarda cada entrega até completar
+        if (!RequisitoCumprido()) return;
+
+        if (itensEntregues2.Contains(item.itemId))
+        {
+            Debug.Log($"'{item.itemId}' já foi entregue na 2ª etapa.");
+            return;
+        }
+
+        bool ultimo = itensEntregues2.Count + 1 >= requeridos.Count;
+
+        if (!ultimo)
+        {
+            itensEntregues2.Add(item.itemId);
+
+            if (consumirItemRequerido2)
+            {
+                RemoverDoInventario(item.itemId);
+                item.foiConsumido = true;
+            }
+
+            Debug.Log($"2ª etapa: '{item.itemId}' entregue ({itensEntregues2.Count}/{requeridos.Count}).");
+            return;
+        }
+
+        // Último item: se a 2ª etapa falhar (ex.: inventário cheio), este item não é gasto
+        if (ExecutarSegundaEtapa(new[] { item.itemId }))
+        {
+            itensEntregues2.Clear();
+            if (consumirItemRequerido2) item.foiConsumido = true;
+        }
     }
 
     // ---------- Este objeto é arrastado ----------
@@ -338,8 +538,8 @@ public class ItemPickup : MonoBehaviour,
     }
 
     // ---------- Resultado da interação ----------
-    // idUsado = item que foi usado (arrastado ou exigido no inventário)
-    private bool ExecutarResultado(string idUsado)
+    // idsUsados = itens que foram usados (arrastados ou exigidos no inventário)
+    private bool ExecutarResultado(string[] idsUsados)
     {
         if (!RequisitoCumprido()) return false;
 
@@ -358,8 +558,11 @@ public class ItemPickup : MonoBehaviour,
 
         // Consome primeiro, para liberar espaço antes de dar o novo item
         consumiuNoUltimoResultado = DeveConsumirNesteUso();
-        if (consumiuNoUltimoResultado)
-            RemoverDoInventario(idUsado);
+        if (consumiuNoUltimoResultado && idsUsados != null)
+        {
+            foreach (string id in idsUsados)
+                RemoverDoInventario(id);
+        }
 
         if (darItemAoUsar)
             DarItemRecompensa();
@@ -437,24 +640,40 @@ public class ItemPickup : MonoBehaviour,
         }
     }
 
-    // ---------- Segunda etapa (clique depois da primeira troca) ----------
-    private void ExecutarSegundaEtapa()
+    // ---------- Segunda etapa ----------
+    // idsUsados = itens requeridos da 2ª etapa que serão consumidos agora (se 'consumirItemRequerido2')
+    private bool ExecutarSegundaEtapa(string[] idsUsados)
     {
-        if (!RequisitoCumprido()) return;
+        if (!RequisitoCumprido()) return false;
 
-        // Dá o item primeiro: se o inventário estiver cheio, nada muda e dá para tentar de novo
+        // Consome primeiro, para liberar espaço antes de dar o novo item
+        bool consome = consumirItemRequerido2 && idsUsados != null && idsUsados.Length > 0;
+        if (consome)
+        {
+            foreach (string id in idsUsados)
+                RemoverDoInventario(id);
+        }
+
+        // Dá o item: se não der (ex.: inventário cheio), devolve o que foi consumido e nada muda
         if (darItemNaSegundaEtapa)
         {
-            if (string.IsNullOrEmpty(itemRecompensa2Id))
-            {
-                Debug.LogWarning($"[{gameObject.name}] itemRecompensa2Id está vazio!", this);
-                return;
-            }
+            bool deu = false;
 
-            if (!GameManager.Instance.AddItem(itemRecompensa2Id))
-            {
+            if (string.IsNullOrEmpty(itemRecompensa2Id))
+                Debug.LogWarning($"[{gameObject.name}] itemRecompensa2Id está vazio!", this);
+            else if (GameManager.Instance.AddItem(itemRecompensa2Id))
+                deu = true;
+            else
                 Debug.LogWarning($"Não foi possível adicionar '{itemRecompensa2Id}' ao inventário.", this);
-                return;
+
+            if (!deu)
+            {
+                if (consome)
+                {
+                    foreach (string id in idsUsados)
+                        GameManager.Instance.AddItem(id);
+                }
+                return false;
             }
 
             Debug.Log($"Item recebido: {itemRecompensa2Id}");
@@ -467,6 +686,7 @@ public class ItemPickup : MonoBehaviour,
         jaTrocou2 = true;
 
         VerificarLimiteDeUsos();
+        return true;
     }
 
     // Deixa o objeto 100% visível (alpha = 1), mantendo a cor atual
