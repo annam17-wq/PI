@@ -251,6 +251,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: Facaid
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 1
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -258,6 +260,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 1
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: -5745873591209706720, guid: 2b5ac39225099b149ae28cdddb4b071c, type: 3}
   darItemNaSegundaEtapa: 1
   itemRecompensa2Id: Cruzid
@@ -851,6 +858,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -858,6 +867,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -1010,6 +1024,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 11400000, guid: 251de5799c65f8245b7c5c6a0627c5eb, type: 2}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -1017,6 +1033,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -1303,8 +1324,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27, y: -155}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 88, y: -127}
+  m_SizeDelta: {x: 144.528, y: 144.528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &280817928
 MonoBehaviour:
@@ -1362,6 +1383,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -1369,6 +1392,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -1436,6 +1464,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: Espinhaid
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 1
   trocarApenasUmaVez: 1
   trocarSprite: 0
@@ -1443,6 +1473,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -1625,6 +1660,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 11400000, guid: 251de5799c65f8245b7c5c6a0627c5eb, type: 2}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -1632,6 +1669,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -1762,7 +1804,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -360, y: 0.0012204}
+  m_AnchoredPosition: {x: -283, y: -177}
   m_SizeDelta: {x: 121.338, y: 137.342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &339686301
@@ -1821,6 +1863,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -1828,6 +1872,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -2591,6 +2640,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 11400000, guid: 251de5799c65f8245b7c5c6a0627c5eb, type: 2}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -2598,6 +2649,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -2721,14 +2777,14 @@ RectTransform:
   m_GameObject: {fileID: 496703704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.471847, y: 0.471847, z: 0.471847}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2095492602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -321, y: 294}
+  m_AnchoredPosition: {x: -254, y: 198}
   m_SizeDelta: {x: 102.667, y: 172.017}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496703706
@@ -2787,6 +2843,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -2794,6 +2852,11 @@ MonoBehaviour:
   darItemAoUsar: 1
   itemRecompensaId: ChavePid
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -2959,6 +3022,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 11400000, guid: 251de5799c65f8245b7c5c6a0627c5eb, type: 2}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -2966,6 +3031,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -3436,6 +3506,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 11400000, guid: 251de5799c65f8245b7c5c6a0627c5eb, type: 2}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -3443,6 +3515,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -4316,6 +4393,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: Salviaid
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 1
   trocarApenasUmaVez: 1
   trocarSprite: 0
@@ -4323,6 +4402,11 @@ MonoBehaviour:
   darItemAoUsar: 1
   itemRecompensaId: ChaRoxoid
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -4690,8 +4774,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1565926014}
+  m_Children: []
   m_Father: {fileID: 2095492602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4719,7 +4802,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7181956285039072419, guid: 59709495b0d33864998326f81c246f6e, type: 3}
+  m_Sprite: {fileID: 5156776694448688124, guid: 025229ba995b269409e67aa7c2fc6be4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4811,6 +4894,126 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288254810}
+  m_CullTransparentMesh: 1
+--- !u!1 &1341619505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1341619506}
+  - component: {fileID: 1341619509}
+  - component: {fileID: 1341619508}
+  - component: {fileID: 1341619507}
+  m_Layer: 5
+  m_Name: "Espa\xE7o carnivora"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1341619506
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341619505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1407447111}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -582, y: -27}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1341619507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341619505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8078574a32a1e6841a667b244ca53bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modo: 2
+  itemId: 
+  arrastavel: 0
+  voltarSeNaoUsado: 1
+  database: {fileID: 0}
+  itemRequerido: Sementeid
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
+  consumirItemRequerido: 1
+  trocarApenasUmaVez: 0
+  trocarSprite: 1
+  spriteNovo: {fileID: -4788908816514841632, guid: f29e247eb35f6a446b85c9ac2bfc1ee7, type: 3}
+  darItemAoUsar: 0
+  itemRecompensaId: 
+  segundaEtapaAoClicar: 1
+  segundaEtapaExigeItem: 1
+  itemRequerido2: Royalid
+  itensRequeridos2Extras:
+  - 
+  exigirTodosOsItens2: 0
+  consumirItemRequerido2: 1
+  spriteNovo2: {fileID: 0}
+  darItemNaSegundaEtapa: 1
+  itemRecompensa2Id: Espinhaid
+  tornarOpacoAoInteragir: 1
+  precisaTerUsado: {fileID: 0}
+  limitarUsos: 0
+  quantidadeDeUsos: 1
+  consumirSoNoUltimoUso: 0
+  objetosParaEsconder: []
+  esconderTodosDeUmaVez: 0
+  objetosParaMostrar: []
+--- !u!114 &1341619508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341619505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -4788908816514841632, guid: f29e247eb35f6a446b85c9ac2bfc1ee7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1341619509
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341619505}
   m_CullTransparentMesh: 1
 --- !u!1 &1346268424
 GameObject:
@@ -5182,7 +5385,7 @@ RectTransform:
   - {fileID: 1558286878}
   - {fileID: 1886365870}
   - {fileID: 339686300}
-  - {fileID: 1528222513}
+  - {fileID: 1341619506}
   m_Father: {fileID: 1399886407}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5284,6 +5487,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: Escadaid
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 1
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -5291,6 +5496,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -5552,7 +5762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1519959586
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5618,118 +5828,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519959585}
   m_CullTransparentMesh: 1
---- !u!1 &1528222512
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1528222513}
-  - component: {fileID: 1528222516}
-  - component: {fileID: 1528222515}
-  - component: {fileID: 1528222514}
-  m_Layer: 5
-  m_Name: Espinha
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1528222513
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1528222512}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1407447111}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -113, y: 0.0012204}
-  m_SizeDelta: {x: 121.338, y: 137.342}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1528222514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1528222512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8078574a32a1e6841a667b244ca53bc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  modo: 0
-  itemId: Espinhaid
-  arrastavel: 0
-  voltarSeNaoUsado: 1
-  database: {fileID: 0}
-  itemRequerido: 
-  consumirItemRequerido: 0
-  trocarApenasUmaVez: 1
-  trocarSprite: 1
-  spriteNovo: {fileID: 0}
-  darItemAoUsar: 0
-  itemRecompensaId: 
-  segundaEtapaAoClicar: 0
-  spriteNovo2: {fileID: 0}
-  darItemNaSegundaEtapa: 0
-  itemRecompensa2Id: 
-  tornarOpacoAoInteragir: 0
-  precisaTerUsado: {fileID: 0}
-  limitarUsos: 0
-  quantidadeDeUsos: 1
-  consumirSoNoUltimoUso: 0
-  objetosParaEsconder: []
-  esconderTodosDeUmaVez: 0
-  objetosParaMostrar: []
---- !u!114 &1528222515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1528222512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 6210733065497478629, guid: 554427e87073c874cbdbc2febfd83b35, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1528222516
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1528222512}
-  m_CullTransparentMesh: 1
 --- !u!1 &1558286877
 GameObject:
   m_ObjectHideFlags: 0
@@ -5764,7 +5862,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -154.526, y: 0.0012297}
+  m_AnchoredPosition: {x: -161, y: 0.0012297}
   m_SizeDelta: {x: 1610.948, y: 879.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1558286879
@@ -5787,7 +5885,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7267527498314420117, guid: aac3ca0f69e852445943baa6b8b69df1, type: 3}
+  m_Sprite: {fileID: 8561114682648173044, guid: 4291481dee0e9054f9e3bcd9e17ab9c3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5804,138 +5902,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558286877}
-  m_CullTransparentMesh: 1
---- !u!1 &1565926013
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1565926014}
-  - component: {fileID: 1565926017}
-  - component: {fileID: 1565926016}
-  - component: {fileID: 1565926015}
-  m_Layer: 5
-  m_Name: Porta
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1565926014
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565926013}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1281998008}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -527.49304, y: -31.246}
-  m_SizeDelta: {x: 309.582, y: 625.835}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1565926015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565926013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1565926016}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1129328484}
-        m_TargetAssemblyTypeName: TrocarCena, Assembly-CSharp
-        m_MethodName: CarregarCenaPorIndice
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1565926016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565926013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -1446459398380425890, guid: 9291aa4d1cb827545834266e78b4704b, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1565926017
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565926013}
   m_CullTransparentMesh: 1
 --- !u!1 &1583981904
 GameObject:
@@ -6198,6 +6164,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 11400000, guid: 251de5799c65f8245b7c5c6a0627c5eb, type: 2}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -6205,6 +6173,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -6312,6 +6285,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -6319,6 +6294,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -6585,7 +6565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 286.426, y: 168.525}
+  m_AnchoredPosition: {x: 442, y: -83}
   m_SizeDelta: {x: 43.199, y: 33.101}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633542153
@@ -6644,6 +6624,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -6651,6 +6633,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -6856,6 +6843,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -6863,6 +6852,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -7145,6 +7139,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 11400000, guid: 251de5799c65f8245b7c5c6a0627c5eb, type: 2}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -7152,6 +7148,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -7295,6 +7296,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -7302,6 +7305,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -7430,7 +7438,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 331, y: -50}
+  m_AnchoredPosition: {x: 267, y: 23}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884642980
@@ -7489,6 +7497,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -7496,6 +7506,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -7542,7 +7557,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 263, y: -181.38}
+  m_AnchoredPosition: {x: 406, y: -181.38}
   m_SizeDelta: {x: 289.378, y: 462.753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1886365871
@@ -7601,6 +7616,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -7608,6 +7625,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -7886,6 +7908,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -7893,6 +7917,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -7960,6 +7989,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: Varaid
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 1
   trocarApenasUmaVez: 0
   trocarSprite: 0
@@ -7967,6 +7998,11 @@ MonoBehaviour:
   darItemAoUsar: 1
   itemRecompensaId: Royalid
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: Royalid
@@ -8391,6 +8427,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 11400000, guid: 251de5799c65f8245b7c5c6a0627c5eb, type: 2}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -8398,6 +8436,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -8466,6 +8509,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 11400000, guid: 251de5799c65f8245b7c5c6a0627c5eb, type: 2}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -8473,6 +8518,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -8709,6 +8759,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 11400000, guid: 251de5799c65f8245b7c5c6a0627c5eb, type: 2}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -8716,6 +8768,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -9057,7 +9114,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -173, y: -116}
+  m_AnchoredPosition: {x: -224, y: -68}
   m_SizeDelta: {x: 113.336, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2130836387
@@ -9116,6 +9173,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 0}
   itemRequerido: 
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 0
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -9123,6 +9182,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 
@@ -9310,6 +9374,8 @@ MonoBehaviour:
   voltarSeNaoUsado: 1
   database: {fileID: 11400000, guid: 251de5799c65f8245b7c5c6a0627c5eb, type: 2}
   itemRequerido: ChavePid
+  itensRequeridosExtras: []
+  exigirTodosOsItens: 1
   consumirItemRequerido: 1
   trocarApenasUmaVez: 1
   trocarSprite: 1
@@ -9317,6 +9383,11 @@ MonoBehaviour:
   darItemAoUsar: 0
   itemRecompensaId: 
   segundaEtapaAoClicar: 0
+  segundaEtapaExigeItem: 0
+  itemRequerido2: 
+  itensRequeridos2Extras: []
+  exigirTodosOsItens2: 1
+  consumirItemRequerido2: 0
   spriteNovo2: {fileID: 0}
   darItemNaSegundaEtapa: 0
   itemRecompensa2Id: 

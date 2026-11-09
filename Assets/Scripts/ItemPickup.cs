@@ -788,11 +788,16 @@ public class ItemPickup : MonoBehaviour,
     {
         if (string.IsNullOrEmpty(id)) return;
 
-        // Esvazia o slot em vez de remover da lista, para o tamanho do inventário não mudar
+        // Esvazia só UM slot com esse id (o primeiro), em vez de esvaziar todos.
+        // Assim, se o jogador tiver 2 peixes, só 1 é consumido.
+        // O slot é esvaziado (não removido da lista) para o tamanho do inventário não mudar.
         foreach (var item in GameManager.Instance.currentData.inventory)
         {
             if (item != null && item.itemId == id)
+            {
                 item.itemId = "";
+                break;
+            }
         }
     }
 }

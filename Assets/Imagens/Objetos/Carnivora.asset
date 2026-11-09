@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6d8d4c4ee6b2147acb8305c3fab293, type: 3}
   m_Name: Carnivora
   m_EditorClassIdentifier: 
-  itemId: ChaRoxoid
-  nomeExibido: ChaRoxo
-  icone: {fileID: 6568394996420521022, guid: dc94abfaab4a1c747bf8030e55a2daac, type: 3}
+  itemId: Carnivoraid
+  nomeExibido: Carnivora
+  icone: {fileID: -4788908816514841632, guid: f29e247eb35f6a446b85c9ac2bfc1ee7, type: 3}

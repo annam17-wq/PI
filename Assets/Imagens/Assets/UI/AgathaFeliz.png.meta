@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 68155e42740d8d347be491497fa77e7d
+guid: 70f71258413e06a4cae45c63e1f08109
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5303720620219984150
-    second: Milla_0
+      213: 236776573426472243
+    second: AgathaFeliz_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Milla_0
+      name: AgathaFeliz_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 26
-        width: 45
-        height: 46
+        x: 71
+        y: 89
+        width: 155
+        height: 137
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6196024cdc99a9940800000000000000
-      internalID: 5303720620219984150
+      spriteID: 335183ef903394300800000000000000
+      internalID: 236776573426472243
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Milla_0: 5303720620219984150
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
