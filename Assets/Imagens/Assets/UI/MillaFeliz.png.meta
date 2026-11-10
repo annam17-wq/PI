@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MillaFeliz_0: -1811415868681339861
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
