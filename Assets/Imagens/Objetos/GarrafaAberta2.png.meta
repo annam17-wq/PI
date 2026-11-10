@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6aee9da56c5a029429f94135b1881040
+guid: b57a1678483a6564795530761ffc9df1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4814143464479045630
-    second: garrafa Fechada_0
+      213: 3098701993035765260
+    second: GarrafaAberta2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: garrafa Fechada_0
+      name: GarrafaAberta2_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 6
-        width: 22
-        height: 56
+        x: 29
+        y: 11
+        width: 58
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef7ba0a79f54fc240800000000000000
-      internalID: 4814143464479045630
+      spriteID: c0611b78b0dc00b20800000000000000
+      internalID: 3098701993035765260
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      garrafa Fechada_0: 4814143464479045630
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

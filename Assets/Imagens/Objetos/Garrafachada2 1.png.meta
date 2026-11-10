@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 9fc3b52d17219d34f952279eb3bcbe38
+guid: ea218bbe76503214a82ffc1597cab6fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3108720312775455464
-    second: garrafa aberta_0
-  - first:
-      213: -3167163312443678300
-    second: garrafa aberta_1
+      213: 4869399061035301538
+    second: Garrafachada2 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -129,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: garrafa aberta_0
+      name: Garrafachada2 1_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 9
-        width: 10
-        height: 8
+        x: 41
+        y: 11
+        width: 46
+        height: 114
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,29 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8e2b50d57a4642b20800000000000000
-      internalID: 3108720312775455464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: garrafa aberta_1
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 6
-        width: 22
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4a125286fb9fb04d0800000000000000
-      internalID: -3167163312443678300
+      spriteID: 2aa31a695a4939340800000000000000
+      internalID: 4869399061035301538
       vertices: []
       indices: 
       edges: []
@@ -173,16 +149,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      garrafa aberta_0: 3108720312775455464
-      garrafa aberta_1: -3167163312443678300
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
