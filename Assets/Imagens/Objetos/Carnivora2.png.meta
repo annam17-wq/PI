@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f29e247eb35f6a446b85c9ac2bfc1ee7
+guid: 81f2397ecbdc46445a759a6d1c8e5928
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4788908816514841632
-    second: Carnivora_0
+      213: 4866257619818392060
+    second: Carnivora2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Carnivora_0
+      name: Carnivora2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 192
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0e385e9ddc06a8db0800000000000000
-      internalID: -4788908816514841632
+      spriteID: cf920dec58b688340800000000000000
+      internalID: 4866257619818392060
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Carnivora_0: -4788908816514841632
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: Carnivoraid
   nomeExibido: Carnivora
-  icone: {fileID: -4788908816514841632, guid: f29e247eb35f6a446b85c9ac2bfc1ee7, type: 3}
+  icone: {fileID: 4866257619818392060, guid: 81f2397ecbdc46445a759a6d1c8e5928, type: 3}

@@ -201,6 +201,12 @@ public class ItemPickup : MonoBehaviour,
             gameObject.SetActive(false);
     }
 
+    // Chamado por outros scripts quando o item arrastado foi usado
+    public void MarcarComoConsumido()
+    {
+        foiConsumido = true;
+    }
+
     // Junta o itemRequerido com os extras numa lista só (1ª etapa)
     private List<string> ObterRequeridos()
     {
