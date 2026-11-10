@@ -3,15 +3,15 @@ using UnityEngine.UI;
 
 public class NavegacaoPaineis : MonoBehaviour
 {
-    [Header("Painéis em ordem (da esquerda pra direita)")]
+    [Header("Paineis em ordem (da esquerda pra direita)")]
     public GameObject[] paineis;
 
-    [Header("Botões de seta")]
+    [Header("Botoes de seta")]
     public Button botaoEsquerda;
     public Button botaoDireita;
 
     [Header("Comportamento")]
-    public bool loop = false; // true = do último painel volta pro primeiro (e vice-versa)
+    public bool loop = false; // true = do ultimo painel volta pro primeiro (e vice-versa)
 
     private int indiceAtual = 0;
 
@@ -31,7 +31,7 @@ public class NavegacaoPaineis : MonoBehaviour
 
         if (novoIndice >= paineis.Length)
         {
-            if (!loop) return; // já está no último painel, ignora o clique
+            if (!loop) return;
             novoIndice = 0;
         }
 
@@ -46,11 +46,28 @@ public class NavegacaoPaineis : MonoBehaviour
 
         if (novoIndice < 0)
         {
-            if (!loop) return; // já está no primeiro painel, ignora o clique
+            if (!loop) return;
             novoIndice = paineis.Length - 1;
         }
 
         MostrarPainel(novoIndice);
+    }
+
+    // Descobre qual painel esta ativo agora e atualiza o indice e as setas
+    public void SincronizarComPainelAtivo()
+    {
+        if (paineis == null) return;
+
+        for (int i = 0; i < paineis.Length; i++)
+        {
+            if (paineis[i] != null && paineis[i].activeSelf)
+            {
+                indiceAtual = i;
+                break;
+            }
+        }
+
+        AtualizarBotoes();
     }
 
     void MostrarPainel(int indice)
@@ -65,7 +82,7 @@ public class NavegacaoPaineis : MonoBehaviour
         AtualizarBotoes();
     }
 
-    // Desativa visualmente a seta quando não há pra onde ir (só relevante se loop = false)
+    // Desativa visualmente a seta quando nao ha pra onde ir (so relevante se loop = false)
     void AtualizarBotoes()
     {
         if (loop) return;
