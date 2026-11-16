@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Garrafachada2 1_0: 4869399061035301538
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

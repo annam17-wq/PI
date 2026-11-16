@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7d25e5d60d0514b43b18cc14fbb6de4d
+guid: 8b9fa58a9e67f2546afc162123c954ec
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -723550339613106669
-    second: NovoBauFechado (1)_0
+      213: -198938125430884413
+    second: Menu_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NovoBauFechado (1)_0
+      name: Menu_0
       rect:
         serializedVersion: 2
-        x: 36
-        y: 29
-        width: 38
-        height: 35
+        x: 0
+        y: 0
+        width: 2400
+        height: 1600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 31e5f36bcce65f5f0800000000000000
-      internalID: -723550339613106669
+      spriteID: 3c7f86534da3d3df0800000000000000
+      internalID: -198938125430884413
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      NovoBauFechado (1)_0: -723550339613106669
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -38,11 +38,7 @@ public class LugarBoneca : MonoBehaviour, IDropHandler, IPointerClickHandler
         ItemPickup item = eventData.pointerDrag.GetComponent<ItemPickup>();
         if (item == null || item.itemId != casa.idBoneca) return;
 
-        if (!casa.PodeColocarEm(this))
-        {
-            Debug.Log("[" + name + "] Esse nao e o proximo lugar da ordem.");
-            return;
-        }
+        if (!casa.TentarColocar(this)) return;
 
         RemoverDoInventario(casa.idBoneca);
         item.MarcarComoConsumido();

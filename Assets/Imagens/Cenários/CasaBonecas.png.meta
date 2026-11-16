@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CasaBonecas_0: -3592859403946871382
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

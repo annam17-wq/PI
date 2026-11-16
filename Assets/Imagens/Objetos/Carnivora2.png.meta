@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Carnivora2_0: 4866257619818392060
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

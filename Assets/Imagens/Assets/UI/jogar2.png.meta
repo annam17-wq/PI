@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: a0a50d5817fdd034e997ae7e8c8afee6
+guid: b037d5325eab6a2499d8cd4b8e7ff014
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 552630846044896446
-    second: NovoBauAberto_0
+      213: -4022501147191548221
+    second: jogar2_0
+  - first:
+      213: -2912340539226645381
+    second: jogar2_1
+  - first:
+      213: 7873897351040452859
+    second: jogar2_2
+  - first:
+      213: 6157063051677002571
+    second: jogar2_3
+  - first:
+      213: -9106824738498366067
+    second: jogar2_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NovoBauAberto_0
+      name: jogar2_0
       rect:
         serializedVersion: 2
-        x: 36
-        y: 29
-        width: 38
-        height: 48
+        x: 72
+        y: 93
+        width: 12
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +152,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ebcfd6693d65ba700800000000000000
-      internalID: 552630846044896446
+      spriteID: 3c6eb0dc4843d28c0800000000000000
+      internalID: -4022501147191548221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jogar2_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 93
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c1d66b5b94597d0800000000000000
+      internalID: -2912340539226645381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jogar2_2
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 93
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf8c7ae4ce3b54d60800000000000000
+      internalID: 7873897351040452859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jogar2_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 93
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4be3e65938427550800000000000000
+      internalID: 6157063051677002571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jogar2_4
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 93
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d85b01e762f0e9180800000000000000
+      internalID: -9106824738498366067
       vertices: []
       indices: 
       edges: []
@@ -156,8 +252,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      NovoBauAberto_0: 552630846044896446
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
