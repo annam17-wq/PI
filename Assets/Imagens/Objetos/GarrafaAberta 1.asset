@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: GarrafaAbertaid
   nomeExibido: GarrafaAberta
-  icone: {fileID: 3108720312775455464, guid: 9fc3b52d17219d34f952279eb3bcbe38, type: 3}
+  icone: {fileID: 9220461085881116059, guid: 7c6bbce06304f694b9cbd6b83762d9d3, type: 3}

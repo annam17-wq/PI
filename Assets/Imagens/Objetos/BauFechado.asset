@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: BauFechadoid
   nomeExibido: BauFechado
-  icone: {fileID: -723550339613106669, guid: 7d25e5d60d0514b43b18cc14fbb6de4d, type: 3}
+  icone: {fileID: -5582305538349014426, guid: 3167029c095cf12448c4790385c03713, type: 3}

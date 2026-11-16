@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: ChavePid
   nomeExibido: Chave Garrafa
-  icone: {fileID: -1217081429069890136, guid: d5eaf887173a3644aaa28d5bc158fc42, type: 3}
+  icone: {fileID: 6711233429298350017, guid: 1851d60d8da7da045a1c1588d5a47d7b, type: 3}
