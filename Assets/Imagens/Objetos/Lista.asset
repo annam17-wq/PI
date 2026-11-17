@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: Listaid
   nomeExibido: Lista
-  icone: {fileID: -3766086523274666681, guid: 552bbc20a114baf48bb4999216db24d0, type: 3}
+  icone: {fileID: 3872714604249597459, guid: a032a226ed18fc7479a55e6d4df7cabd, type: 3}

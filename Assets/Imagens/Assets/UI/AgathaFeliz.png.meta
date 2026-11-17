@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AgathaFeliz_0: 236776573426472243
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

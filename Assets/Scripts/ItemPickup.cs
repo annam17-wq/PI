@@ -121,6 +121,10 @@ public class ItemPickup : MonoBehaviour,
     [Tooltip("Objetos que começam DESATIVADOS na cena e aparecem quando a interação der certo (ex.: a pá e a vara dentro do baú aberto)")]
     public GameObject[] objetosParaMostrar;
 
+    [Header("Diálogo ao clicar (enquanto ainda não foi usado)")]
+    [Tooltip("Dispara quando o jogador clica no objeto antes da primeira interação (ex.: baú trancado). Só vale no modo Trocar Sprite Ao Receber Item")]
+    public DialogoTrigger dialogoAoClicarFechado;
+
     // Troca de sprite
     private int usosFeitos;
     private bool consumiuNoUltimoResultado;
@@ -283,8 +287,16 @@ public class ItemPickup : MonoBehaviour,
 
             case ModoInteracao.TrocarSpriteAoReceberItem:
                 {
+                    // Ainda fechado (1ª troca não aconteceu): mostra o diálogo e sai
+                    if (!jaTrocou)
+                    {
+                        if (dialogoAoClicarFechado != null)
+                            dialogoAoClicarFechado.Disparar();
+                        return;
+                    }
+
                     // Só funciona depois que a primeira troca já aconteceu
-                    if (!segundaEtapaAoClicar || !jaTrocou || jaTrocou2) return;
+                    if (!segundaEtapaAoClicar || jaTrocou2) return;
 
                     string[] usados2 = System.Array.Empty<string>();
 

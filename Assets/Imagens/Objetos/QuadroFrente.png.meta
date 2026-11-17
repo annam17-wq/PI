@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5555d6348be8c7e4ea6915a311da7145
+guid: 4eacfe69b2face742a7e15f2f3aa89eb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3932604661394033981
-    second: Semente_0
+      213: -6380966012015663479
+    second: QuadroFrente_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Semente_0
+      name: QuadroFrente_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 11
-        width: 22
-        height: 11
+        x: 0
+        y: 0
+        width: 197
+        height: 233
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3dcf6c8a1b639630800000000000000
-      internalID: 3932604661394033981
+      spriteID: 98627f948314277a0800000000000000
+      internalID: -6380966012015663479
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Semente_0: 3932604661394033981
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

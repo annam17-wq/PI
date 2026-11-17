@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: Sementeid
   nomeExibido: Semente
-  icone: {fileID: 3932604661394033981, guid: 5555d6348be8c7e4ea6915a311da7145, type: 3}
+  icone: {fileID: -9220674418421377174, guid: 1353db441f2152b43920957591d4e5ec, type: 3}

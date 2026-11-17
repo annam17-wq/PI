@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AgathaPreocupada2_0: -7683067344835611109
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
