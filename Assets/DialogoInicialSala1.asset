@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb81bc254f557c44b9c04710656bee3, type: 3}
+  m_Name: DialogoInicialSala1
+  m_EditorClassIdentifier: 
+  soUmaVez: 1
+  falas:
+  - nome: agatha
+    texto: "que isso, como vim parar aqui? cad\xEA a milla? me lembro que depois
+      de assistir o cl\xE1ssico \u201Cjogos mortais\u201D pela d\xE9cima vez no cineplex
+      cinemas em strawberry hill com a milla, voltamos para casa, dormimos e nada\u2026
+      lembro de mais nada depois disso, como raios eu vim parar aqui?\r\n"
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: agatha
+    texto: "que lugar \xE9 esse?\r\n"
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: agatha
+    texto: Mila?
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: agatha
+    texto: "ainda n\xE3o entendi o que est\xE1 acontecendo, mas preciso dar um jeito
+      de sair daqui."
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
