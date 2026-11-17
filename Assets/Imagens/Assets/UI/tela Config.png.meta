@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tela Config_0: 2804565275927115517
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -180,7 +180,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sair_0: 171238231740521945
+      Sair_1: 7359041045344315663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

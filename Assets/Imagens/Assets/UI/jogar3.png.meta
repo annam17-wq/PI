@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jogar3_0: -74880508804454011
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

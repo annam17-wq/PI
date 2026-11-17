@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Ba\xFAAberto2_0": 5550640887009592720
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

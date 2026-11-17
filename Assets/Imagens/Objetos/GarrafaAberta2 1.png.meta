@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GarrafaAberta2 1_0: 9220461085881116059
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

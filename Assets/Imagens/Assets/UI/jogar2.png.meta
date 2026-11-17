@@ -252,7 +252,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jogar2_0: -4022501147191548221
+      jogar2_1: -2912340539226645381
+      jogar2_2: 7873897351040452859
+      jogar2_3: 6157063051677002571
+      jogar2_4: -9106824738498366067
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
