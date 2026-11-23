@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soUmaVez: 0
   falas:
-  - nome: agatha
+  - nome: Agatha
     texto: "Sem chance, n\xE3o alcan\xE7o l\xE1 em cima. "
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
     spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soUmaVez: 0
   falas:
-  - nome: agatha
+  - nome: Agatha
     texto: "Uma chave! J\xE1 sei o que posso abrir com isso. \n"
     spriteFechado: {fileID: 236776573426472243, guid: 70f71258413e06a4cae45c63e1f08109, type: 3}
     spriteAberto: {fileID: -1565899972492246751, guid: 767ae1f9c470fed43a0151a5a1ac82e5, type: 3}

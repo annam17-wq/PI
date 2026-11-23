@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soUmaVez: 0
   falas:
-  - nome: agatha
+  - nome: Agatha
     texto: Nada aqui parece ser por acaso, com certeza irei usar esse passo a passo
       em algum lugar.
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soUmaVez: 0
   falas:
-  - nome: agatha
-    texto: "uma vara de pesca de brinquedo\u2026 e uma p\xE1. parece que algu\xE9m
+  - nome: Agatha
+    texto: "Uma vara de pesca de brinquedo\u2026 e uma p\xE1. parece que algu\xE9m
       organizou o meu \u201Ckit de sobreviv\xEAncia\u201D de crian\xE7a. quem montou
       esse lugar tem senso de humor bem estranho.\r\n"
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}

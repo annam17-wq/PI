@@ -16,18 +16,18 @@ MonoBehaviour:
   falas:
   - nome: "Rob\xF4"
     texto: "Aqui est\xE1."
-    spriteFechado: {fileID: -2209074827421515703, guid: 6ef575e3cf81c84419653b633c6b070e, type: 3}
-    spriteAberto: {fileID: 0}
-  - nome: agatha
+    spriteFechado: {fileID: -5394850541725157563, guid: 6f62946670069af4293861a6a13ad9a4, type: 3}
+    spriteAberto: {fileID: -8653980411494036482, guid: b1f076500edb7b84eb27001b4d432521, type: 3}
+  - nome: Agatha
     texto: "Espera, n\xE3o aconteceu nada? Eu achava que isso iria desbloquear alguma
       coisa. O que eu fa\xE7o agora?"
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
     spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
   - nome: "Rob\xF4"
     texto: "Toma o ch\xE1."
-    spriteFechado: {fileID: -2209074827421515703, guid: 6ef575e3cf81c84419653b633c6b070e, type: 3}
-    spriteAberto: {fileID: 0}
-  - nome: agatha
+    spriteFechado: {fileID: -5394850541725157563, guid: 6f62946670069af4293861a6a13ad9a4, type: 3}
+    spriteAberto: {fileID: -8653980411494036482, guid: b1f076500edb7b84eb27001b4d432521, type: 3}
+  - nome: Agatha
     texto: "Tomar o ch\xE1? H\xE1, agora eu entendi. O ch\xE1 ta envenenado, e voc\xEA
       quer que eu tome para me matar."
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
@@ -35,8 +35,8 @@ MonoBehaviour:
   - nome: "Rob\xF4"
     texto: "Te matar? Eu s\xF3 quero que voc\xEA experimente minha obra de arte!
       Se eu quisesse voc\xEA morta, acha que eu ja n\xE3o o teria feito?"
-    spriteFechado: {fileID: -2209074827421515703, guid: 6ef575e3cf81c84419653b633c6b070e, type: 3}
-    spriteAberto: {fileID: 0}
+    spriteFechado: {fileID: -5394850541725157563, guid: 6f62946670069af4293861a6a13ad9a4, type: 3}
+    spriteAberto: {fileID: -8653980411494036482, guid: b1f076500edb7b84eb27001b4d432521, type: 3}
   - nome: agatha
     texto: "... Voc\xEA tem essa capacidade?"
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
@@ -44,22 +44,22 @@ MonoBehaviour:
   - nome: "Rob\xF4"
     texto: "Para de pensar nessas coisas! Eu te garanto que esse ch\xE1 ir\xE1 te
       ajudar no seu objetivo"
-    spriteFechado: {fileID: -2209074827421515703, guid: 6ef575e3cf81c84419653b633c6b070e, type: 3}
-    spriteAberto: {fileID: 0}
+    spriteFechado: {fileID: -5394850541725157563, guid: 6f62946670069af4293861a6a13ad9a4, type: 3}
+    spriteAberto: {fileID: -8653980411494036482, guid: b1f076500edb7b84eb27001b4d432521, type: 3}
   - nome: "Rob\xF4"
     texto: "Ele talvez at\xE9 fa\xE7a voc\xEA enxergar coisas que voc\xEA n\xE3o
       enxerga agora;"
-    spriteFechado: {fileID: -2209074827421515703, guid: 6ef575e3cf81c84419653b633c6b070e, type: 3}
-    spriteAberto: {fileID: 0}
-  - nome: agatha
+    spriteFechado: {fileID: -5394850541725157563, guid: 6f62946670069af4293861a6a13ad9a4, type: 3}
+    spriteAberto: {fileID: -8653980411494036482, guid: b1f076500edb7b84eb27001b4d432521, type: 3}
+  - nome: Agatha
     texto: "Perai.. o ch\xE1 faz parte do enigma? Eu PRECISO tomar para sair daqui?"
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
     spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
-  - nome: agatha
+  - nome: Agatha
     texto: Ele... vai me ajudar? Mesmo?
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
     spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
-  - nome: agatha
+  - nome: Agatha
     texto: "Eu... acho que n\xE3o tenho op\xE7\xE3o."
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
     spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}

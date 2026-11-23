@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soUmaVez: 0
   falas:
-  - nome: agatha
-    texto: 'um ursinho fofinho. ele parece mais pesado do que deveria. deve ter algo
+  - nome: Agatha
+    texto: 'Um ursinho fofinho. ele parece mais pesado do que deveria. deve ter algo
       dentro, mas eu preciso de algo afiado para abrir.
 
 '

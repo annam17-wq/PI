@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soUmaVez: 0
   falas:
-  - nome: agatha
+  - nome: Agatha
     texto: "Ele gostou do peixe, talvez ele consiga me ajudar agora? Me pergunto
       o que tem no fundo do aqu\xE1rio... "
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soUmaVez: 0
   falas:
-  - nome: agatha
+  - nome: Agatha
     texto: "Que peixe fofinho! Tem uma cara de.... Kuro!! Ser\xE1 que ela consegue
       nadar r\xE1pido?"
     spriteFechado: {fileID: 236776573426472243, guid: 70f71258413e06a4cae45c63e1f08109, type: 3}

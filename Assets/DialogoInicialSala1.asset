@@ -14,21 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soUmaVez: 1
   falas:
-  - nome: agatha
+  - nome: Agatha
     texto: "H\xE3, como vim parar aqui? cad\xEA a Milla? "
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
     spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
-  - nome: agatha
+  - nome: Agatha
     texto: "Me lembro que depois de assistir  \u201Cjogos mortais\u201D pela d\xE9cima
       vez no cineplex com a milla, voltamos para casa, dormimos e \u2026 n\xE3o lembro
       de mais nada, como raios eu vim parar aqui?\r\n"
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
     spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
-  - nome: agatha
+  - nome: Agatha
     texto: "Que lugar \xE9 esse?"
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
     spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
-  - nome: agatha
+  - nome: Agatha
     texto: Mila?
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
     spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}

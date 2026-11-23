@@ -14,25 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soUmaVez: 1
   falas:
-  - nome: agatha
-    texto: "e a\xED bem? essa est\xE1 boa n\xE3o acha? "
+  - nome: Agatha
+    texto: "E a\xED bem? essa est\xE1 boa n\xE3o acha? "
     spriteFechado: {fileID: 236776573426472243, guid: 70f71258413e06a4cae45c63e1f08109, type: 3}
     spriteAberto: {fileID: -1565899972492246751, guid: 767ae1f9c470fed43a0151a5a1ac82e5, type: 3}
-  - nome: milla
-    texto: "n\xE3o, ainda n\xE3o, ela ainda n\xE3o \xE9 laranja o suficiente, parece
+  - nome: Milla
+    texto: "N\xE3o, ainda n\xE3o, ela ainda n\xE3o \xE9 laranja o suficiente, parece
       uma melancia com icter\xEDcia, eu quero uma perfeita!"
     spriteFechado: {fileID: -1811415868681339861, guid: 5b8ba16e02cb9564298215375d4f1ef5, type: 3}
     spriteAberto: {fileID: -5292333167925656135, guid: bd9d9685e0e91d746b6dbc0532f8ca64, type: 3}
-  - nome: agatha
-    texto: 'e essa aqui? '
+  - nome: Agatha
+    texto: 'E essa aqui? '
     spriteFechado: {fileID: 236776573426472243, guid: 70f71258413e06a4cae45c63e1f08109, type: 3}
     spriteAberto: {fileID: -1565899972492246751, guid: 767ae1f9c470fed43a0151a5a1ac82e5, type: 3}
-  - nome: milla
-    texto: "n\xE3o sei, essa est\xE1 com um formato estranho\u2026"
+  - nome: Milla
+    texto: "N\xE3o sei, essa est\xE1 com um formato estranho\u2026"
     spriteFechado: {fileID: -1811415868681339861, guid: 5b8ba16e02cb9564298215375d4f1ef5, type: 3}
     spriteAberto: {fileID: -5292333167925656135, guid: bd9d9685e0e91d746b6dbc0532f8ca64, type: 3}
-  - nome: agatha
-    texto: "j\xE1 est\xE1 escurecendo, esse n\xE3o \xE9 um bom lugar pra ficarmos
+  - nome: Agatha
+    texto: "J\xE1 est\xE1 escurecendo, esse n\xE3o \xE9 um bom lugar pra ficarmos
       a noite sozinhas\u2026 inclusive voc\xEA viu aquela f\xE1brica abandonada ali?
       ela n\xE3o \xE9 estranha?"
     spriteFechado: {fileID: 236776573426472243, guid: 70f71258413e06a4cae45c63e1f08109, type: 3}
@@ -41,36 +41,36 @@ MonoBehaviour:
     texto: "ambas olham em dire\xE7\xE3o a f\xE1brica e sentem um arrepio na espinha\r\n\r"
     spriteFechado: {fileID: 0}
     spriteAberto: {fileID: 0}
-  - nome: milla
-    texto: "que hora \xE9 agora? "
+  - nome: Milla
+    texto: "Que hora \xE9 agora? "
     spriteFechado: {fileID: -1811415868681339861, guid: 5b8ba16e02cb9564298215375d4f1ef5, type: 3}
     spriteAberto: {fileID: -5292333167925656135, guid: bd9d9685e0e91d746b6dbc0532f8ca64, type: 3}
-  - nome: agatha
+  - nome: Agatha
     texto: "18:30\u2026"
     spriteFechado: {fileID: 236776573426472243, guid: 70f71258413e06a4cae45c63e1f08109, type: 3}
     spriteAberto: {fileID: -1565899972492246751, guid: 767ae1f9c470fed43a0151a5a1ac82e5, type: 3}
-  - nome: milla
-    texto: "tenho certeza que essa f\xE1brica \xE9 um ponto de tr\xE1fico de \xF3rg\xE3os\u2026
+  - nome: Milla
+    texto: "Tenho certeza que essa f\xE1brica \xE9 um ponto de tr\xE1fico de \xF3rg\xE3os\u2026
       Relaxaa, \xE9 brincadeira"
     spriteFechado: {fileID: -1811415868681339861, guid: 5b8ba16e02cb9564298215375d4f1ef5, type: 3}
     spriteAberto: {fileID: -5292333167925656135, guid: bd9d9685e0e91d746b6dbc0532f8ca64, type: 3}
-  - nome: agatha
-    texto: "a\xED, credo pra que isso, t\xE1 repreendido toda a energia ruim desse
+  - nome: Agatha
+    texto: "A\xED, credo pra que isso, t\xE1 repreendido toda a energia ruim desse
       lugar.\r\n"
     spriteFechado: {fileID: 236776573426472243, guid: 70f71258413e06a4cae45c63e1f08109, type: 3}
     spriteAberto: {fileID: -1565899972492246751, guid: 767ae1f9c470fed43a0151a5a1ac82e5, type: 3}
-  - nome: milla
-    texto: "t\xE1, eu vou no banheiro rapidinho, se n\xE3o encontrarmos uma melhor
+  - nome: Milla
+    texto: "T\xE1, eu vou no banheiro rapidinho, se n\xE3o encontrarmos uma melhor
       em 10 minutos, levamos essa que parece que a cinderella bateu a carruagem a
       100 km/h"
     spriteFechado: {fileID: -1811415868681339861, guid: 5b8ba16e02cb9564298215375d4f1ef5, type: 3}
     spriteAberto: {fileID: -5292333167925656135, guid: bd9d9685e0e91d746b6dbc0532f8ca64, type: 3}
   - nome: 
-    texto: "mila vai em dire\xE7\xE3o ao banheiro"
+    texto: "Milla vai em dire\xE7\xE3o ao banheiro"
     spriteFechado: {fileID: 0}
     spriteAberto: {fileID: 0}
-  - nome: agatha
-    texto: "parece mesmo, coitada, mas sustento a opini\xE3o que a que parece uma
+  - nome: Agatha
+    texto: "Parece mesmo, coitada, mas sustento a opini\xE3o que a que parece uma
       melancia com icter\xEDcia \xE9 melhor..."
     spriteFechado: {fileID: 236776573426472243, guid: 70f71258413e06a4cae45c63e1f08109, type: 3}
     spriteAberto: {fileID: -1565899972492246751, guid: 767ae1f9c470fed43a0151a5a1ac82e5, type: 3}
