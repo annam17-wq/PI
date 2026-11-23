@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb81bc254f557c44b9c04710656bee3, type: 3}
+  m_Name: DialogoFimTerminal
+  m_EditorClassIdentifier: 
+  soUmaVez: 0
+  falas:
+  - nome: agatha
+    texto: "Eu.. terminei! Finalmente terminei. \xC9 isso?"
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: agatha
+    texto: "Mas perai... do que isso serviu? eu n\xE3o ouvi barulho nenhum... o que
+      eu fa\xE7o agora?"
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: "Rob\xF4"
+    texto: Psiuuu, senhorita? Precisa de ajuda?
+    spriteFechado: {fileID: -2209074827421515703, guid: 6ef575e3cf81c84419653b633c6b070e, type: 3}
+    spriteAberto: {fileID: 0}
+  - nome: agatha
+    texto: 'Eu... talvez. Eu to indo ai. '
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}

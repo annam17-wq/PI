@@ -12,92 +12,95 @@ public class ItemPickup : MonoBehaviour,
         ColetarEDesaparecer,
         TrocarSpriteAoClicar,
         TrocarSpriteAoReceberItem,
-        ApenasArrastar // Ìcones do invent·rio: sÛ servem para ser arrastados
+        ApenasArrastar // √≠cones do invent√°rio: s√≥ servem para ser arrastados
     }
 
     [Header("Modo")]
     public ModoInteracao modo = ModoInteracao.ColetarEDesaparecer;
 
-    [Header("IdentificaÁ„o")]
+    [Header("Identifica√ß√£o")]
     [Tooltip("Coletar: igual ao itemId do ItemData. Arrastar: id que este objeto representa (ex.: Facaid)")]
     public string itemId;
 
     [Header("Arrastar")]
-    [Tooltip("Marque nos objetos que o jogador pode arrastar atÈ outros")]
+    [Tooltip("Marque nos objetos que o jogador pode arrastar at√© outros")]
     public bool arrastavel = false;
 
     [Tooltip("Se soltar em lugar errado, volta para onde estava")]
     public bool voltarSeNaoUsado = true;
 
-    [Tooltip("SÛ para Ìcones do invent·rio (modo Apenas Arrastar): usado para descobrir qual item est· no slot pelo Ìcone")]
+    [Tooltip("S√≥ para √≠cones do invent√°rio (modo Apenas Arrastar): usado para descobrir qual item est√° no slot pelo √≠cone")]
     public ItemDatabase database;
 
-    [Header("CondiÁ„o")]
-    [Tooltip("Ao clicar: precisa estar no invent·rio. Ao receber: precisa ser o item arrastado. Vazio = qualquer/nenhum")]
+    [Header("Condi√ß√£o")]
+    [Tooltip("Ao clicar: precisa estar no invent√°rio. Ao receber: precisa ser o item arrastado. Vazio = qualquer/nenhum")]
     public string itemRequerido;
 
-    [Tooltip("Itens requeridos ADICIONAIS (alÈm do 'Item Requerido' acima)")]
+    [Tooltip("Itens requeridos ADICIONAIS (al√©m do 'Item Requerido' acima)")]
     public string[] itensRequeridosExtras;
 
-    [Tooltip("Ligado: precisa entregar TODOS os itens (um por vez, em qualquer ordem). Desligado: qualquer um deles j· basta")]
+    [Tooltip("Ligado: precisa entregar TODOS os itens (um por vez, em qualquer ordem). Desligado: qualquer um deles j√° basta")]
     public bool exigirTodosOsItens = true;
 
     [Tooltip("Consome o item requerido depois de usar")]
     public bool consumirItemRequerido = false;
 
-    [Tooltip("Impede repetir a interaÁ„o depois da primeira vez")]
+    [Tooltip("Impede repetir a intera√ß√£o depois da primeira vez")]
     public bool trocarApenasUmaVez = true;
 
     [Header("Resultado: Trocar Sprite")]
     public bool trocarSprite = true;
 
-    [Tooltip("Sprite que vai substituir o atual (ex.: urso sem cabeÁa)")]
+    [Tooltip("Sprite que vai substituir o atual (ex.: urso sem cabe√ßa)")]
     public Sprite spriteNovo;
 
     [Header("Resultado: Dar Item")]
-    [Tooltip("Adiciona um item ao invent·rio quando a interaÁ„o der certo")]
+    [Tooltip("Adiciona um item ao invent√°rio quando a intera√ß√£o der certo")]
     public bool darItemAoUsar = false;
 
-    [Tooltip("itemId do item que ser· adicionado (precisa existir no ItemDatabase)")]
+    [Tooltip("itemId do item que ser√° adicionado (precisa existir no ItemDatabase)")]
     public string itemRecompensaId;
 
     [Header("Segunda etapa (clique depois da primeira troca)")]
-    [Tooltip("Depois da 1™ troca, clicar no objeto faz a 2™ troca (modo Trocar Sprite Ao Receber Item)")]
+    [Tooltip("Depois da 1¬™ troca, clicar no objeto faz a 2¬™ troca (modo Trocar Sprite Ao Receber Item)")]
     public bool segundaEtapaAoClicar = false;
 
-    [Tooltip("Ligado: a 2™ etapa sÛ acontece se o jogador ARRASTAR o item atÈ o objeto ou, ao CLICAR, tiver o item no invent·rio")]
+    [Tooltip("Ligado: a 2¬™ etapa s√≥ acontece se o jogador ARRASTAR o item at√© o objeto ou, ao CLICAR, tiver o item no invent√°rio")]
     public bool segundaEtapaExigeItem = false;
 
-    [Tooltip("Item requerido na 2™ etapa")]
+    [Tooltip("Item requerido na 2¬™ etapa")]
     public string itemRequerido2;
 
-    [Tooltip("Itens requeridos ADICIONAIS na 2™ etapa (alÈm do 'Item Requerido 2')")]
+    [Tooltip("Itens requeridos ADICIONAIS na 2¬™ etapa (al√©m do 'Item Requerido 2')")]
     public string[] itensRequeridos2Extras;
 
-    [Tooltip("Ligado: precisa de TODOS os itens da 2™ etapa. Desligado: qualquer um deles j· basta")]
+    [Tooltip("Ligado: precisa de TODOS os itens da 2¬™ etapa. Desligado: qualquer um deles j√° basta")]
     public bool exigirTodosOsItens2 = true;
 
-    [Tooltip("Consome o(s) item(ns) requerido(s) da 2™ etapa")]
+    [Tooltip("Consome o(s) item(ns) requerido(s) da 2¬™ etapa")]
     public bool consumirItemRequerido2 = false;
 
-    [Tooltip("Sprite que aparece na 2™ troca")]
+    [Tooltip("Sprite que aparece na 2¬™ troca")]
     public Sprite spriteNovo2;
 
-    [Tooltip("D· um item ao invent·rio na 2™ etapa")]
+    [Tooltip("D√° um item ao invent√°rio na 2¬™ etapa")]
     public bool darItemNaSegundaEtapa = false;
 
-    [Tooltip("itemId do item dado na 2™ etapa (precisa existir no ItemDatabase)")]
+    [Tooltip("itemId do item dado na 2¬™ etapa (precisa existir no ItemDatabase)")]
     public string itemRecompensa2Id;
 
-    [Header("TransparÍncia")]
-    [Tooltip("Ao interagir com sucesso, o objeto fica 100% visÌvel (alpha = 1). ⁄til para objetos que comeÁam invisÌveis")]
+    [Header("Transpar√™ncia")]
+    [Tooltip("Ao interagir com sucesso, o objeto fica 100% vis√≠vel (alpha = 1). √ötil para objetos que come√ßam invis√≠veis")]
     public bool tornarOpacoAoInteragir = false;
 
     [Header("Requisito de outro objeto")]
-    [Tooltip("Este objeto sÛ funciona depois que o objeto indicado j· foi usado com sucesso (ex.: o 'lugar vara' sÛ funciona depois do 'lugar escada')")]
+    [Tooltip("Este objeto s√≥ funciona depois que o objeto indicado j√° foi usado com sucesso (ex.: o 'lugar vara' s√≥ funciona depois do 'lugar escada')")]
     public ItemPickup precisaTerUsado;
 
-    // Outros objetos consultam isto para saber se a interaÁ„o j· aconteceu
+    [Tooltip("Dispara quando o jogador tenta usar este objeto sem ter cumprido o requisito (ex.: pescar sem ter usado a escada)")]
+    public DialogoTrigger dialogoSemRequisito;
+
+    // Outros objetos consultam isto para saber se a intera√ß√£o j√° aconteceu
     public bool InteracaoConcluida => jaTrocou;
 
     [Header("Limite de usos")]
@@ -107,23 +110,38 @@ public class ItemPickup : MonoBehaviour,
     [Tooltip("Quantas vezes o objeto pode ser usado antes de sumir")]
     [Min(1)] public int quantidadeDeUsos = 1;
 
-    [Tooltip("Com 'Consumir Item Requerido' ligado: o item sÛ sai do invent·rio no ⁄LTIMO uso (ex.: a vara some depois do 2∫ peixe). Desligado: sai j· no 1∫ uso. N„o vale quando h· v·rios itens requeridos por arrasto")]
+    [Tooltip("Com 'Consumir Item Requerido' ligado: o item s√≥ sai do invent√°rio no √öLTIMO uso (ex.: a vara some depois do 2¬∫ peixe). Desligado: sai j√° no 1¬∫ uso. N√£o vale quando h√° v√°rios itens requeridos por arrasto")]
     public bool consumirSoNoUltimoUso = false;
 
     [Header("Esconder outros objetos")]
-    [Tooltip("Objetos da cena que somem quando a interaÁ„o der certo (ex.: os peixes pescados)")]
+    [Tooltip("Objetos da cena que somem quando a intera√ß√£o der certo (ex.: os peixes pescados)")]
     public GameObject[] objetosParaEsconder;
 
-    [Tooltip("Desligado: cada uso esconde o PR”XIMO da lista (uso 1 = elemento 0, uso 2 = elemento 1...). Ligado: o primeiro uso esconde todos")]
+    [Tooltip("Desligado: cada uso esconde o PR√ìXIMO da lista (uso 1 = elemento 0, uso 2 = elemento 1...). Ligado: o primeiro uso esconde todos")]
     public bool esconderTodosDeUmaVez = false;
 
     [Header("Mostrar outros objetos")]
-    [Tooltip("Objetos que comeÁam DESATIVADOS na cena e aparecem quando a interaÁ„o der certo (ex.: a p· e a vara dentro do ba˙ aberto)")]
+    [Tooltip("Objetos que come√ßam DESATIVADOS na cena e aparecem quando a intera√ß√£o der certo (ex.: a p√° e a vara dentro do ba√∫ aberto)")]
     public GameObject[] objetosParaMostrar;
 
-    [Header("Di·logo ao clicar (enquanto ainda n„o foi usado)")]
-    [Tooltip("Dispara quando o jogador clica no objeto antes da primeira interaÁ„o (ex.: ba˙ trancado). SÛ vale no modo Trocar Sprite Ao Receber Item")]
+    [Header("Di√°logo ao clicar (enquanto ainda n√£o foi usado)")]
+    [Tooltip("Dispara quando o jogador clica no objeto antes da primeira intera√ß√£o (ex.: ba√∫ trancado). S√≥ vale no modo Trocar Sprite Ao Receber Item")]
     public DialogoTrigger dialogoAoClicarFechado;
+
+    [Header("Di√°logo ao coletar")]
+    [Tooltip("Dispara logo depois que o item for coletado (modo Coletar E Desaparecer). Use um gatilho em OUTRO objeto, que n√£o desapare√ßa junto com o item")]
+    public DialogoTrigger dialogoAoColetar;
+
+    [Header("Di√°logo depois da intera√ß√£o (1¬™ etapa)")]
+    [Tooltip("Dispara logo depois que a intera√ß√£o der certo (ex.: depois de colocar a escada no lugar)")]
+    public DialogoTrigger dialogoAposInteracao;
+
+    [Tooltip("Quando o objeto exige V√ÅRIOS itens: dispara a cada item entregue que ainda n√£o completou tudo (ex.: o polvo comeu o 1¬∫ peixe, mas ainda quer o 2¬∫)")]
+    public DialogoTrigger dialogoAposEntregaParcial;
+
+    [Header("Di√°logo depois da segunda etapa")]
+    [Tooltip("Dispara quando a 2¬™ etapa der certo (ex.: depois de receber a cruz do urso)")]
+    public DialogoTrigger dialogoAposSegundaEtapa;
 
     // Troca de sprite
     private int usosFeitos;
@@ -134,7 +152,7 @@ public class ItemPickup : MonoBehaviour,
     private Image imagemUI;
     private RawImage rawImageUI;
 
-    // Entregas parciais quando h· v·rios itens requeridos (n„o È salvo)
+    // Entregas parciais quando h√° v√°rios itens requeridos (n√£o √© salvo)
     private readonly HashSet<string> itensEntregues = new HashSet<string>();
     private readonly HashSet<string> itensEntregues2 = new HashSet<string>();
 
@@ -165,9 +183,9 @@ public class ItemPickup : MonoBehaviour,
         GarantirCanvasGroup();
     }
 
-    // Cria o CanvasGroup se for um objeto de UI arrast·vel.
-    // TambÈm È chamado no inÌcio do arrasto, porque os Ìcones do invent·rio
-    // tÍm 'arrastavel' ligado por cÛdigo DEPOIS do Awake.
+    // Cria o CanvasGroup se for um objeto de UI arrast√°vel.
+    // Tamb√©m √© chamado no in√≠cio do arrasto, porque os √≠cones do invent√°rio
+    // t√™m 'arrastavel' ligado por c√≥digo DEPOIS do Awake.
     private void GarantirCanvasGroup()
     {
         if (canvasGroup != null) return;
@@ -182,21 +200,21 @@ public class ItemPickup : MonoBehaviour,
     {
         if (GameManager.Instance == null)
         {
-            Debug.LogError($"[{gameObject.name}] GameManager.Instance È null!", this);
+            Debug.LogError($"[{gameObject.name}] GameManager.Instance √© null!", this);
             enabled = false;
             return;
         }
 
         if (GameManager.Instance.currentData == null)
         {
-            Debug.LogError($"[{gameObject.name}] currentData est· null!", this);
+            Debug.LogError($"[{gameObject.name}] currentData est√° null!", this);
             enabled = false;
             return;
         }
 
         if (GameManager.Instance.currentData.inventory == null)
         {
-            Debug.LogError($"[{gameObject.name}] inventory est· null!", this);
+            Debug.LogError($"[{gameObject.name}] inventory est√° null!", this);
             enabled = false;
             return;
         }
@@ -211,13 +229,13 @@ public class ItemPickup : MonoBehaviour,
         foiConsumido = true;
     }
 
-    // Junta o itemRequerido com os extras numa lista sÛ (1™ etapa)
+    // Junta o itemRequerido com os extras numa lista s√≥ (1¬™ etapa)
     private List<string> ObterRequeridos()
     {
         return MontarLista(itemRequerido, itensRequeridosExtras);
     }
 
-    // Idem, para a 2™ etapa
+    // Idem, para a 2¬™ etapa
     private List<string> ObterRequeridos2()
     {
         return MontarLista(itemRequerido2, itensRequeridos2Extras);
@@ -238,7 +256,7 @@ public class ItemPickup : MonoBehaviour,
         return lista;
     }
 
-    // Confere se o invent·rio tem os itens exigidos. Devolve em 'usados' o que deve ser consumido.
+    // Confere se o invent√°rio tem os itens exigidos. Devolve em 'usados' o que deve ser consumido.
     private bool ConferirNoInventario(List<string> requeridos, bool exigirTodos, out string[] usados)
     {
         usados = System.Array.Empty<string>();
@@ -269,6 +287,10 @@ public class ItemPickup : MonoBehaviour,
                 if (GameManager.Instance.AddItem(itemId))
                 {
                     Debug.Log($"Item coletado: {itemId}");
+
+                    if (dialogoAoColetar != null)
+                        dialogoAoColetar.Disparar();
+
                     gameObject.SetActive(false);
                 }
                 break;
@@ -277,7 +299,7 @@ public class ItemPickup : MonoBehaviour,
                 {
                     if (!ConferirNoInventario(ObterRequeridos(), exigirTodosOsItens, out string[] usados))
                     {
-                        Debug.Log("Faltam itens necess·rios no invent·rio.");
+                        Debug.Log("Faltam itens necess√°rios no invent√°rio.");
                         return;
                     }
 
@@ -287,7 +309,7 @@ public class ItemPickup : MonoBehaviour,
 
             case ModoInteracao.TrocarSpriteAoReceberItem:
                 {
-                    // Ainda fechado (1™ troca n„o aconteceu): mostra o di·logo e sai
+                    // Ainda fechado (1¬™ troca n√£o aconteceu): mostra o di√°logo e sai
                     if (!jaTrocou)
                     {
                         if (dialogoAoClicarFechado != null)
@@ -295,20 +317,20 @@ public class ItemPickup : MonoBehaviour,
                         return;
                     }
 
-                    // SÛ funciona depois que a primeira troca j· aconteceu
+                    // S√≥ funciona depois que a primeira troca j√° aconteceu
                     if (!segundaEtapaAoClicar || jaTrocou2) return;
 
                     string[] usados2 = System.Array.Empty<string>();
 
                     if (segundaEtapaExigeItem)
                     {
-                        // O que j· foi entregue por arrasto n„o precisa estar no invent·rio de novo
+                        // O que j√° foi entregue por arrasto n√£o precisa estar no invent√°rio de novo
                         List<string> requeridos2 = ObterRequeridos2();
                         requeridos2.RemoveAll(id => itensEntregues2.Contains(id));
 
                         if (!ConferirNoInventario(requeridos2, exigirTodosOsItens2, out usados2))
                         {
-                            Debug.Log("Faltam itens necess·rios para a 2™ etapa.");
+                            Debug.Log("Faltam itens necess√°rios para a 2¬™ etapa.");
                             return;
                         }
                     }
@@ -317,6 +339,13 @@ public class ItemPickup : MonoBehaviour,
                         itensEntregues2.Clear();
                     break;
                 }
+
+            case ModoInteracao.ApenasArrastar:
+                // Clique no √≠cone do invent√°rio: abre o zoom do item, se ele tiver um configurado
+                ResolverIdPeloIcone();
+                if (!string.IsNullOrEmpty(itemId) && ZoomItensInventario.Instance != null)
+                    ZoomItensInventario.Instance.Abrir(itemId);
+                break;
         }
     }
 
@@ -331,11 +360,11 @@ public class ItemPickup : MonoBehaviour,
         ItemPickup item = eventData.pointerDrag.GetComponent<ItemPickup>();
         if (item == null || !item.arrastavel)
         {
-            Debug.Log("O objeto solto n„o tem ItemPickup arrast·vel.");
+            Debug.Log("O objeto solto n√£o tem ItemPickup arrast√°vel.");
             return;
         }
 
-        // J· fez a 1™ troca e a 2™ etapa exige item: o item solto vale para a 2™ etapa
+        // J√° fez a 1¬™ troca e a 2¬™ etapa exige item: o item solto vale para a 2¬™ etapa
         if (segundaEtapaAoClicar && segundaEtapaExigeItem && jaTrocou && !jaTrocou2)
         {
             ReceberItemSegundaEtapa(item);
@@ -344,7 +373,7 @@ public class ItemPickup : MonoBehaviour,
 
         List<string> requeridos = ObterRequeridos();
 
-        // Item errado: n„o faz nada (ele volta sozinho para o lugar)
+        // Item errado: n√£o faz nada (ele volta sozinho para o lugar)
         if (requeridos.Count > 0 && !requeridos.Contains(item.itemId))
         {
             Debug.Log($"Item errado: '{item.itemId}'");
@@ -361,7 +390,7 @@ public class ItemPickup : MonoBehaviour,
             return;
         }
 
-        // V·rios itens: guarda cada entrega atÈ completar
+        // V√°rios itens: guarda cada entrega at√© completar
         if (!RequisitoCumprido()) return;
 
         if (limitarUsos)
@@ -375,7 +404,7 @@ public class ItemPickup : MonoBehaviour,
 
         if (itensEntregues.Contains(item.itemId))
         {
-            Debug.Log($"'{item.itemId}' j· foi entregue aqui.");
+            Debug.Log($"'{item.itemId}' j√° foi entregue aqui.");
             return;
         }
 
@@ -390,22 +419,26 @@ public class ItemPickup : MonoBehaviour,
         if (itensEntregues.Count < requeridos.Count)
         {
             Debug.Log($"Item '{item.itemId}' entregue ({itensEntregues.Count}/{requeridos.Count}).");
+
+            if (dialogoAposEntregaParcial != null)
+                dialogoAposEntregaParcial.Disparar();
+
             return;
         }
 
-        // Todos entregues: dispara o efeito (os itens j· foram consumidos acima)
+        // Todos entregues: dispara o efeito (os itens j√° foram consumidos acima)
         if (ExecutarResultado(System.Array.Empty<string>()))
             itensEntregues.Clear();
     }
 
-    // Item arrastado atÈ o objeto durante a 2™ etapa
+    // Item arrastado at√© o objeto durante a 2¬™ etapa
     private void ReceberItemSegundaEtapa(ItemPickup item)
     {
         List<string> requeridos = ObterRequeridos2();
 
         if (requeridos.Count > 0 && !requeridos.Contains(item.itemId))
         {
-            Debug.Log($"Item errado para a 2™ etapa: '{item.itemId}'");
+            Debug.Log($"Item errado para a 2¬™ etapa: '{item.itemId}'");
             return;
         }
 
@@ -419,12 +452,12 @@ public class ItemPickup : MonoBehaviour,
             return;
         }
 
-        // V·rios itens: guarda cada entrega atÈ completar
+        // V√°rios itens: guarda cada entrega at√© completar
         if (!RequisitoCumprido()) return;
 
         if (itensEntregues2.Contains(item.itemId))
         {
-            Debug.Log($"'{item.itemId}' j· foi entregue na 2™ etapa.");
+            Debug.Log($"'{item.itemId}' j√° foi entregue na 2¬™ etapa.");
             return;
         }
 
@@ -440,11 +473,11 @@ public class ItemPickup : MonoBehaviour,
                 item.foiConsumido = true;
             }
 
-            Debug.Log($"2™ etapa: '{item.itemId}' entregue ({itensEntregues2.Count}/{requeridos.Count}).");
+            Debug.Log($"2¬™ etapa: '{item.itemId}' entregue ({itensEntregues2.Count}/{requeridos.Count}).");
             return;
         }
 
-        // ⁄ltimo item: se a 2™ etapa falhar (ex.: invent·rio cheio), este item n„o È gasto
+        // √öltimo item: se a 2¬™ etapa falhar (ex.: invent√°rio cheio), este item n√£o √© gasto
         if (ExecutarSegundaEtapa(new[] { item.itemId }))
         {
             itensEntregues2.Clear();
@@ -452,7 +485,7 @@ public class ItemPickup : MonoBehaviour,
         }
     }
 
-    // ---------- Este objeto È arrastado ----------
+    // ---------- Este objeto √© arrastado ----------
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log($"[{name}] OnBeginDrag. arrastavel={arrastavel}, modo={modo}");
@@ -466,13 +499,13 @@ public class ItemPickup : MonoBehaviour,
             if (string.IsNullOrEmpty(itemId))
             {
                 Debug.LogWarning(
-                    $"[{name}] N„o achei o item deste slot. " +
-                    "Confira o campo Database e se o 'icone' do ItemData È o mesmo sprite do slot.", this);
+                    $"[{name}] N√£o achei o item deste slot. " +
+                    "Confira o campo Database e se o 'icone' do ItemData √© o mesmo sprite do slot.", this);
                 return;
             }
         }
 
-        // Garante que o item arrastado n„o bloqueie o raycast do alvo
+        // Garante que o item arrastado n√£o bloqueie o raycast do alvo
         if (canvas == null) canvas = GetComponentInParent<Canvas>();
         GarantirCanvasGroup();
 
@@ -525,7 +558,7 @@ public class ItemPickup : MonoBehaviour,
         if (canvasGroup != null) canvasGroup.blocksRaycasts = true;
         if (col2D != null) col2D.enabled = true;
 
-        // Se foi consumido, o objeto some; sen„o volta (se configurado)
+        // Se foi consumido, o objeto some; sen√£o volta (se configurado)
         if (foiConsumido || voltarSeNaoUsado)
         {
             if (canvasGroup != null)
@@ -544,7 +577,7 @@ public class ItemPickup : MonoBehaviour,
                 imagemUI.enabled = false;
                 itemId = "";
 
-                // Redesenha o invent·rio a partir dos dados: se um item novo caiu neste
+                // Redesenha o invent√°rio a partir dos dados: se um item novo caiu neste
                 // mesmo slot (ex.: o peixe no lugar da vara), ele reaparece em vez de ficar escondido
                 if (InventoryUI.Instance != null) InventoryUI.Instance.AtualizarUI();
             }
@@ -555,8 +588,8 @@ public class ItemPickup : MonoBehaviour,
         }
     }
 
-    // ---------- Resultado da interaÁ„o ----------
-    // idsUsados = itens que foram usados (arrastados ou exigidos no invent·rio)
+    // ---------- Resultado da intera√ß√£o ----------
+    // idsUsados = itens que foram usados (arrastados ou exigidos no invent√°rio)
     private bool ExecutarResultado(string[] idsUsados)
     {
         if (!RequisitoCumprido()) return false;
@@ -574,7 +607,7 @@ public class ItemPickup : MonoBehaviour,
 
         if (tornarOpacoAoInteragir) TornarOpaco();
 
-        // Consome primeiro, para liberar espaÁo antes de dar o novo item
+        // Consome primeiro, para liberar espa√ßo antes de dar o novo item
         consumiuNoUltimoResultado = DeveConsumirNesteUso();
         if (consumiuNoUltimoResultado && idsUsados != null)
         {
@@ -591,13 +624,16 @@ public class ItemPickup : MonoBehaviour,
         EsconderObjetosDoUso();
         MostrarObjetos();
 
-        // Com segunda etapa, o objeto sÛ some depois dela
+        if (dialogoAposInteracao != null)
+            dialogoAposInteracao.Disparar();
+
+        // Com segunda etapa, o objeto s√≥ some depois dela
         if (!segundaEtapaAoClicar) VerificarLimiteDeUsos();
 
         return true;
     }
 
-    // Decide se o item requerido sai do invent·rio neste uso (chamado antes de contar o uso)
+    // Decide se o item requerido sai do invent√°rio neste uso (chamado antes de contar o uso)
     private bool DeveConsumirNesteUso()
     {
         if (!consumirItemRequerido) return false;
@@ -608,14 +644,18 @@ public class ItemPickup : MonoBehaviour,
         return true;
     }
 
-    // Verifica se o objeto exigido j· foi usado (sem exigÍncia = sempre liberado)
+    // Verifica se o objeto exigido j√° foi usado (sem exig√™ncia = sempre liberado)
     private bool RequisitoCumprido()
     {
         if (precisaTerUsado == null) return true;
 
         if (!precisaTerUsado.InteracaoConcluida)
         {
-            Debug.Log($"[{gameObject.name}] ainda n„o liberado: precisa usar '{precisaTerUsado.name}' primeiro.");
+            Debug.Log($"[{gameObject.name}] ainda n√£o liberado: precisa usar '{precisaTerUsado.name}' primeiro.");
+
+            if (dialogoSemRequisito != null)
+                dialogoSemRequisito.Disparar();
+
             return false;
         }
 
@@ -639,7 +679,7 @@ public class ItemPickup : MonoBehaviour,
             objetosParaEsconder[indice].SetActive(false);
     }
 
-    // Ativa os objetos da lista (que comeÁam desativados na cena)
+    // Ativa os objetos da lista (que come√ßam desativados na cena)
     private void MostrarObjetos()
     {
         if (objetosParaMostrar == null) return;
@@ -648,7 +688,7 @@ public class ItemPickup : MonoBehaviour,
             if (obj != null) obj.SetActive(true);
     }
 
-    // Some quando o n˙mero de usos chega ao limite
+    // Some quando o n√∫mero de usos chega ao limite
     private void VerificarLimiteDeUsos()
     {
         if (limitarUsos && usosFeitos >= quantidadeDeUsos)
@@ -659,12 +699,12 @@ public class ItemPickup : MonoBehaviour,
     }
 
     // ---------- Segunda etapa ----------
-    // idsUsados = itens requeridos da 2™ etapa que ser„o consumidos agora (se 'consumirItemRequerido2')
+    // idsUsados = itens requeridos da 2¬™ etapa que ser√£o consumidos agora (se 'consumirItemRequerido2')
     private bool ExecutarSegundaEtapa(string[] idsUsados)
     {
         if (!RequisitoCumprido()) return false;
 
-        // Consome primeiro, para liberar espaÁo antes de dar o novo item
+        // Consome primeiro, para liberar espa√ßo antes de dar o novo item
         bool consome = consumirItemRequerido2 && idsUsados != null && idsUsados.Length > 0;
         if (consome)
         {
@@ -672,17 +712,17 @@ public class ItemPickup : MonoBehaviour,
                 RemoverDoInventario(id);
         }
 
-        // D· o item: se n„o der (ex.: invent·rio cheio), devolve o que foi consumido e nada muda
+        // D√° o item: se n√£o der (ex.: invent√°rio cheio), devolve o que foi consumido e nada muda
         if (darItemNaSegundaEtapa)
         {
             bool deu = false;
 
             if (string.IsNullOrEmpty(itemRecompensa2Id))
-                Debug.LogWarning($"[{gameObject.name}] itemRecompensa2Id est· vazio!", this);
+                Debug.LogWarning($"[{gameObject.name}] itemRecompensa2Id est√° vazio!", this);
             else if (GameManager.Instance.AddItem(itemRecompensa2Id))
                 deu = true;
             else
-                Debug.LogWarning($"N„o foi possÌvel adicionar '{itemRecompensa2Id}' ao invent·rio.", this);
+                Debug.LogWarning($"N√£o foi poss√≠vel adicionar '{itemRecompensa2Id}' ao invent√°rio.", this);
 
             if (!deu)
             {
@@ -703,11 +743,14 @@ public class ItemPickup : MonoBehaviour,
 
         jaTrocou2 = true;
 
+        if (dialogoAposSegundaEtapa != null)
+            dialogoAposSegundaEtapa.Disparar();
+
         VerificarLimiteDeUsos();
         return true;
     }
 
-    // Deixa o objeto 100% visÌvel (alpha = 1), mantendo a cor atual
+    // Deixa o objeto 100% vis√≠vel (alpha = 1), mantendo a cor atual
     private void TornarOpaco()
     {
         if (spriteRenderer != null)
@@ -731,7 +774,7 @@ public class ItemPickup : MonoBehaviour,
             rawImageUI.color = c;
         }
 
-        // Se o objeto tiver um CanvasGroup (que tambÈm controla a transparÍncia)
+        // Se o objeto tiver um CanvasGroup (que tamb√©m controla a transpar√™ncia)
         CanvasGroup grupo = GetComponent<CanvasGroup>();
         if (grupo != null) grupo.alpha = 1f;
     }
@@ -740,7 +783,7 @@ public class ItemPickup : MonoBehaviour,
     {
         if (sprite == null)
         {
-            Debug.LogWarning($"[{gameObject.name}] sprite n„o foi definido!", this);
+            Debug.LogWarning($"[{gameObject.name}] sprite n√£o foi definido!", this);
             return false;
         }
 
@@ -776,17 +819,17 @@ public class ItemPickup : MonoBehaviour,
     {
         if (string.IsNullOrEmpty(itemRecompensaId))
         {
-            Debug.LogWarning($"[{gameObject.name}] itemRecompensaId est· vazio!", this);
+            Debug.LogWarning($"[{gameObject.name}] itemRecompensaId est√° vazio!", this);
             return;
         }
 
         if (GameManager.Instance.AddItem(itemRecompensaId))
             Debug.Log($"Item recebido: {itemRecompensaId}");
         else
-            Debug.LogWarning($"N„o foi possÌvel adicionar '{itemRecompensaId}' ao invent·rio.", this);
+            Debug.LogWarning($"N√£o foi poss√≠vel adicionar '{itemRecompensaId}' ao invent√°rio.", this);
     }
 
-    // Descobre qual item est· no slot comparando o sprite do Ìcone com o ItemDatabase
+    // Descobre qual item est√° no slot comparando o sprite do √≠cone com o ItemDatabase
     private void ResolverIdPeloIcone()
     {
         if (database == null || database.itens == null || imagemUI == null) return;
@@ -806,9 +849,9 @@ public class ItemPickup : MonoBehaviour,
     {
         if (string.IsNullOrEmpty(id)) return;
 
-        // Esvazia sÛ UM slot com esse id (o primeiro), em vez de esvaziar todos.
-        // Assim, se o jogador tiver 2 peixes, sÛ 1 È consumido.
-        // O slot È esvaziado (n„o removido da lista) para o tamanho do invent·rio n„o mudar.
+        // Esvazia s√≥ UM slot com esse id (o primeiro), em vez de esvaziar todos.
+        // Assim, se o jogador tiver 2 peixes, s√≥ 1 √© consumido.
+        // O slot √© esvaziado (n√£o removido da lista) para o tamanho do invent√°rio n√£o mudar.
         foreach (var item in GameManager.Instance.currentData.inventory)
         {
             if (item != null && item.itemId == id)

@@ -68,6 +68,9 @@ public class GameManager : MonoBehaviour
             return false;
         }
 
+        // Mostra quem está adicionando o item (útil para achar o culpado)
+        Debug.Log("AddItem: " + id + "\n" + System.Environment.StackTrace);
+
         var inventario = currentData.inventory;
 
         var slotVazio = inventario.Find(
@@ -85,5 +88,24 @@ public class GameManager : MonoBehaviour
         InventoryUI.Instance?.AtualizarUI();
 
         return true;
+    }
+
+    [ContextMenu("Limpar Inventario e Salvar")]
+    void LimparInventarioESalvar()
+    {
+        if (currentData == null || currentData.inventory == null)
+        {
+            Debug.LogWarning("Entre em Play antes de usar (currentData só existe em Play).");
+            return;
+        }
+
+        foreach (var item in currentData.inventory)
+        {
+            if (item != null) item.itemId = "";
+        }
+
+        SaveGame();
+        InventoryUI.Instance?.AtualizarUI();
+        Debug.Log("Inventário limpo e salvo.");
     }
 }

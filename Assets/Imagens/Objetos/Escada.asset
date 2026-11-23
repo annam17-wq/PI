@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: Escadaid
   nomeExibido: Escada
-  icone: {fileID: -8729881625419622333, guid: 26ea4ed0a30cdb245a798dee36b1a3ec, type: 3}
+  icone: {fileID: -1326818958114357481, guid: 21a8dd970fddb324885c23025dacbc18, type: 3}
+  spriteAmpliado: {fileID: 0}

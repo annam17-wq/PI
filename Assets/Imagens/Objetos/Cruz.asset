@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: Cruzid
   nomeExibido: Cruz
-  icone: {fileID: -1168046015340915722, guid: b906433c6d9fd73489aa8af6c65ba445, type: 3}
+  icone: {fileID: 7679332166599965447, guid: 12d8bbbc816b0d24c9b64bd5c109da88, type: 3}
+  spriteAmpliado: {fileID: -8602489267507255363, guid: 17aee4e7fe7a42d48bf7f27f4c1099b2, type: 3}

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb81bc254f557c44b9c04710656bee3, type: 3}
+  m_Name: DialogoSemCha
+  m_EditorClassIdentifier: 
+  soUmaVez: 1
+  falas:
+  - nome: "Rob\xF4"
+    texto: "Ent\xE3o senhorita, eu percebi que voc\xEA ta um pouco perdida. Por que
+      voc\xEA n\xE3o descansa um poucp? "
+    spriteFechado: {fileID: -2209074827421515703, guid: 6ef575e3cf81c84419653b633c6b070e, type: 3}
+    spriteAberto: {fileID: 0}
+  - nome: agatha
+    texto: "Descansar? Eu n\xE3o posso descansar, eu preciso sair daqui, me encontrar
+      com a milla, e..."
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: agatha
+    texto: Eu...
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: "Rob\xF4"
+    texto: "Olha, se EU fosse voc\xEA. aproveitaria para me deixar fazer um ch\xE1
+      para voc\xEA. Eu s\xF3 preciso de uma planta pra isso."
+    spriteFechado: {fileID: -2209074827421515703, guid: 6ef575e3cf81c84419653b633c6b070e, type: 3}
+    spriteAberto: {fileID: 0}
+  - nome: agatha
+    texto: "Realmente, \xE9 a \xFAnica coisa que eu n\xE3o fiz... tudo bem."
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}

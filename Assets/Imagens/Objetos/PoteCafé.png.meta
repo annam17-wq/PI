@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "PoteCaf\xE9_0": -281953850327167624
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

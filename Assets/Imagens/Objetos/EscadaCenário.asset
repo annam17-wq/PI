@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: "EscadaCen\xE1rioid"
   nomeExibido: "EscadaCen\xE1rio"
-  icone: {fileID: 21300000, guid: fa196cf799750404fa1790a762c65c49, type: 3}
+  icone: {fileID: -1326818958114357481, guid: 21a8dd970fddb324885c23025dacbc18, type: 3}
+  spriteAmpliado: {fileID: 0}

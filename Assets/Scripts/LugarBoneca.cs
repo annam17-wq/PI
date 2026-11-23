@@ -38,6 +38,7 @@ public class LugarBoneca : MonoBehaviour, IDropHandler, IPointerClickHandler
         ItemPickup item = eventData.pointerDrag.GetComponent<ItemPickup>();
         if (item == null || item.itemId != casa.idBoneca) return;
 
+        // TentarColocar tambem confere se a alavanca esta ligada
         if (!casa.TentarColocar(this)) return;
 
         RemoverDoInventario(casa.idBoneca);
@@ -50,7 +51,13 @@ public class LugarBoneca : MonoBehaviour, IDropHandler, IPointerClickHandler
     // Clicar na boneca devolve ela ao inventario
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!ocupado || casa == null || casa.Concluido) return;
+        if (!ocupado || casa == null || casa.SequenciaCompleta) return;
+
+        if (!casa.Ativa)
+        {
+            Debug.Log("Casa de bonecas desligada: ative a alavanca primeiro.");
+            return;
+        }
 
         if (!GameManager.Instance.AddItem(casa.idBoneca))
         {

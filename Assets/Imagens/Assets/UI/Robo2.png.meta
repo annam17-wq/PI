@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b906433c6d9fd73489aa8af6c65ba445
+guid: 6ef575e3cf81c84419653b633c6b070e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1168046015340915722
-    second: cruz (1)_0
+      213: -2209074827421515703
+    second: Robo2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cruz (1)_0
+      name: Robo2_0
       rect:
         serializedVersion: 2
-        x: 45
-        y: 38
-        width: 38
-        height: 53
+        x: 31
+        y: 21
+        width: 39
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6f35b4e66544acfe0800000000000000
-      internalID: -1168046015340915722
+      spriteID: 940884d062ac751e0800000000000000
+      internalID: -2209074827421515703
       vertices: []
       indices: 
       edges: []
@@ -156,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      cruz (1)_0: -1168046015340915722
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

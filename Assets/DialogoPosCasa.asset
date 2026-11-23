@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb81bc254f557c44b9c04710656bee3, type: 3}
+  m_Name: DialogoPosCasa
+  m_EditorClassIdentifier: 
+  soUmaVez: 0
+  falas:
+  - nome: Agatha
+    texto: Foi essa porta que fez barulho! Agora da pra mexer no quadro
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: Agatha
+    texto: Mas o que isso significa?
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: Agatha
+    texto: "...que som \xE9 esse?"
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: Milla
+    texto: 'Agatha? '
+    spriteFechado: {fileID: -1045338427213485008, guid: 145e7e3d7e0161f4e8fc1c9237b8030a, type: 3}
+    spriteAberto: {fileID: 6442742839137912292, guid: 96d15d948d037dd4ea2feff9f8c3d9ca, type: 3}
+  - nome: Agatha
+    texto: "Milla? MILLA! EI, VOC\xCA TA AI?"
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: Milla
+    texto: "AGATHA! N\xC3O ACREDITO, \xE9 voc\xEA mesmo? "
+    spriteFechado: {fileID: -1045338427213485008, guid: 145e7e3d7e0161f4e8fc1c9237b8030a, type: 3}
+    spriteAberto: {fileID: 6442742839137912292, guid: 96d15d948d037dd4ea2feff9f8c3d9ca, type: 3}
+  - nome: Agatha
+    texto: "Sim, sou eu! Meu amor, voc\xEA ta bem?"
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: Milla
+    texto: "Quem se importa? VOC\xCA ta bem? se machucou?"
+    spriteFechado: {fileID: 6442742839137912292, guid: 96d15d948d037dd4ea2feff9f8c3d9ca, type: 3}
+    spriteAberto: {fileID: -1045338427213485008, guid: 145e7e3d7e0161f4e8fc1c9237b8030a, type: 3}
+  - nome: Agatha
+    texto: "Eu me importo! Eu n\xE3o fa\xE7o ideia de como fomos parar aqui, voc\xEA
+      lembra de alguma coisa?"
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: Milla
+    texto: "N\xE3o... eu to muito confusa, a sala que eu to \xE9 maneira, mas ta
+      me dando calafrios..."
+    spriteFechado: {fileID: 6442742839137912292, guid: 96d15d948d037dd4ea2feff9f8c3d9ca, type: 3}
+    spriteAberto: {fileID: -1045338427213485008, guid: 145e7e3d7e0161f4e8fc1c9237b8030a, type: 3}
+  - nome: Agatha
+    texto: "Me descreve como \xE9 ai."
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: Milla
+    texto: "\xC9 uma sala fechada onde cada parede tem tipo um \"tema\", um \xE9
+      um circo, outro hospital, pris\xE3o e igreja "
+    spriteFechado: {fileID: 6442742839137912292, guid: 96d15d948d037dd4ea2feff9f8c3d9ca, type: 3}
+    spriteAberto: {fileID: -1045338427213485008, guid: 145e7e3d7e0161f4e8fc1c9237b8030a, type: 3}
+  - nome: Milla
+    texto: "Normalmente eu adoraria algo assim, por\xE9m o fato de terem nos sequestrado
+      e nos jogado aqui n\xE3o \xE9 um bom sinal."
+    spriteFechado: {fileID: -1045338427213485008, guid: 145e7e3d7e0161f4e8fc1c9237b8030a, type: 3}
+    spriteAberto: {fileID: 6442742839137912292, guid: 96d15d948d037dd4ea2feff9f8c3d9ca, type: 3}
+  - nome: Agatha
+    texto: "A sua sala parece ser bem pior que a minha. Ela \xE9 estruturamente parecida,
+      mas com outras coisas. "
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: Agatha
+    texto: Eu resolvi alguns enigmas com base nas coisas ao meu redor, e nessa porta
+      aqui na minha frente tem um quadro
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: Milla
+    texto: "Quadro? Perai, eu tenho alguns quadros aqui tamb\xE9m."
+    spriteFechado: {fileID: -1045338427213485008, guid: 145e7e3d7e0161f4e8fc1c9237b8030a, type: 3}
+    spriteAberto: {fileID: 6442742839137912292, guid: 96d15d948d037dd4ea2feff9f8c3d9ca, type: 3}
+  - nome: Agatha
+    texto: "Voc\xEA tem? Isso deve fazer parte do meu enigma ent\xE3o! "
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: Agatha
+    texto: "Quantos quadros voc\xEA ta vendo ai?"
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: Milla
+    texto: "Quatro, todos s\xE3o obras de arte conhecidas."
+    spriteFechado: {fileID: -1045338427213485008, guid: 145e7e3d7e0161f4e8fc1c9237b8030a, type: 3}
+    spriteAberto: {fileID: 6442742839137912292, guid: 96d15d948d037dd4ea2feff9f8c3d9ca, type: 3}
+  - nome: Agatha
+    texto: "Quatro? espera.... qual \xE9 o terceiro quadro, da esquerda pra direita?"
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: Milla
+    texto: "Pelo que eu vi aqui \xE9 um quadro do coliseu, pintado em 1747."
+    spriteFechado: {fileID: -1045338427213485008, guid: 145e7e3d7e0161f4e8fc1c9237b8030a, type: 3}
+    spriteAberto: {fileID: 6442742839137912292, guid: 96d15d948d037dd4ea2feff9f8c3d9ca, type: 3}
+  - nome: Agatha
+    texto: "Coliseu... ser\xE1 que isso \xE9 uma senha? "
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}

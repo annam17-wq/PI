@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      QuadroFrente_0: -6380966012015663479
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

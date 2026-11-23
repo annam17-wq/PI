@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb81bc254f557c44b9c04710656bee3, type: 3}
+  m_Name: DialogoPegarCruz
+  m_EditorClassIdentifier: 
+  soUmaVez: 0
+  falas:
+  - nome: agatha
+    texto: "Uma cruz? beleza, tudo certo. Melhor n\xE3o questionar."
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
+  - nome: agatha
+    texto: Perai... tem algo escrito nela. Preciso olhar mais de perto.
+    spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
+    spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}

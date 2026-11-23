@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Frigobar_0: 4044125400978887657
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
