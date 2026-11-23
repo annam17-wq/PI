@@ -333,7 +333,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9a33504d570800741800770dc36ea1ef, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4042,6 +4042,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454007673}
   m_CullTransparentMesh: 1
+--- !u!1 &457819989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 457819991}
+  - component: {fileID: 457819990}
+  m_Layer: 0
+  m_Name: GatilhoQuadroDepois
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &457819990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457819989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2440609c6b5dfae4e844c478bd4a79c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogo: {fileID: 11400000, guid: 9887551b5a2d4824daef18da97bd3267, type: 2}
+  gatilho: 2
+  atraso: 0
+  aoTerminar:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &457819991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457819989}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 442.97604, y: 215.99141, z: -2.3336124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &463748380
 GameObject:
   m_ObjectHideFlags: 0
@@ -5105,6 +5167,68 @@ MonoBehaviour:
     brilho: 1
     resolucaoIndex: -1
     telaCheia: 1
+--- !u!1 &524873615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 524873617}
+  - component: {fileID: 524873616}
+  m_Layer: 0
+  m_Name: GatilhoSementeColetar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &524873616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524873615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2440609c6b5dfae4e844c478bd4a79c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogo: {fileID: 11400000, guid: b32f26d20355b9240b449fec60eb1cb8, type: 2}
+  gatilho: 2
+  atraso: 0
+  aoTerminar:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &524873617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524873615}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 442.97604, y: 215.99141, z: -2.3336124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &541089412
 GameObject:
   m_ObjectHideFlags: 0
@@ -7382,7 +7506,7 @@ MonoBehaviour:
   esconderTodosDeUmaVez: 0
   objetosParaMostrar: []
   dialogoAoClicarFechado: {fileID: 0}
-  dialogoAoColetar: {fileID: 0}
+  dialogoAoColetar: {fileID: 524873616}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
   dialogoAposSegundaEtapa: {fileID: 0}
@@ -7642,6 +7766,68 @@ RectTransform:
   m_AnchoredPosition: {x: 570.5682, y: 275.77368}
   m_SizeDelta: {x: 2357.8, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1057479812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1057479814}
+  - component: {fileID: 1057479813}
+  m_Layer: 0
+  m_Name: GatilhoQuadroAntes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1057479813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057479812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2440609c6b5dfae4e844c478bd4a79c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogo: {fileID: 11400000, guid: afefe3661592b2a4fa25e6de55cecf69, type: 2}
+  gatilho: 2
+  atraso: 0
+  aoTerminar:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &1057479814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057479812}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 442.97604, y: 215.99141, z: -2.3336124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1059073168
 GameObject:
   m_ObjectHideFlags: 0
@@ -10508,7 +10694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1519959586
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13628,7 +13814,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -553, y: 78.1}
+  m_AnchoredPosition: {x: -539.3, y: 78.1}
   m_SizeDelta: {x: 100, y: 112.909}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2005335518
@@ -13683,7 +13869,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteCostas: {fileID: 7819641676573255353, guid: 4e10b56461953504da75495a3ad68493, type: 3}
   liberado: 0
-  dialogoAoVirar: {fileID: 0}
+  dialogoAntes: {fileID: 1057479813}
+  dialogoAoVirar: {fileID: 457819990}
 --- !u!1 &2015643120
 GameObject:
   m_ObjectHideFlags: 0
@@ -14776,7 +14963,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2095492601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15331,7 +15518,10 @@ SceneRoots:
   - {fileID: 86650757}
   - {fileID: 1522089111}
   - {fileID: 1856196744}
+  - {fileID: 524873617}
   - {fileID: 620213018}
+  - {fileID: 1057479814}
+  - {fileID: 457819991}
   - {fileID: 1836903680}
   - {fileID: 1918088059}
   - {fileID: 2129426536}
