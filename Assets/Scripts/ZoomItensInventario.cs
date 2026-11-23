@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 // Coloque este script no objeto "ZoomManager" (o mesmo que tem o script ZoomManager).
-// Ao clicar no ícone de um item no inventário, abre o zoom com o PNG ampliado desse item.
-// Opcional: cada item pode abrir um diálogo junto com o zoom.
+// Ao clicar no ícone de um item no inventário:
+//  - abre o zoom com o PNG ampliado desse item (se tiver PNG)
+//  - abre um dialogo junto (se tiver)
+//  - dispara o evento "Ao Clicar" (se tiver)
 public class ZoomItensInventario : MonoBehaviour
 {
     public static ZoomItensInventario Instance { get; private set; }
@@ -14,14 +17,17 @@ public class ZoomItensInventario : MonoBehaviour
         [Tooltip("Mesmo itemId do ItemData (ex.: Cruzid)")]
         public string itemId;
 
-        [Tooltip("PNG ampliado que aparece no zoom")]
+        [Tooltip("PNG ampliado que aparece no zoom. Vazio = nao abre zoom")]
         public Sprite spriteAmpliado;
 
-        [Tooltip("Opcional: diálogo que abre junto com o zoom (ex.: DialogoCruzPerto). Vazio = sem diálogo")]
+        [Tooltip("Opcional: dialogo que abre junto com o zoom (ex.: DialogoCruzPerto). Vazio = sem dialogo")]
         public DialogoData dialogo;
+
+        [Tooltip("Opcional: roda ao clicar no item (ex.: NarracaoFinal.Iniciar)")]
+        public UnityEvent aoClicar;
     }
 
-    [Header("Itens que abrem zoom ao clicar no inventário")]
+    [Header("Itens que reagem ao clique no inventário")]
     public List<ZoomDoItem> itens = new List<ZoomDoItem>();
 
     void Awake()
@@ -35,7 +41,11 @@ public class ZoomItensInventario : MonoBehaviour
         if (ZoomManager.Instance == null || ZoomManager.EstaAberto) return;
 
         ZoomDoItem zoom = itens.Find(i => i != null && i.itemId == id);
-        if (zoom == null || zoom.spriteAmpliado == null) return;
+        if (zoom == null) return;
+
+        if (zoom.aoClicar != null) zoom.aoClicar.Invoke();
+
+        if (zoom.spriteAmpliado == null) return;
 
         ZoomManager.Instance.AbrirImagem(zoom.spriteAmpliado);
 

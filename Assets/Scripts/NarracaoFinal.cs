@@ -52,6 +52,10 @@ public class NarracaoFinal : MonoBehaviour
 
     void Awake()
     {
+        // Se esquecer de arrastar os campos, pega sozinho (evita a tela ficar preta)
+        if (telaPreta == null) telaPreta = GetComponent<CanvasGroup>();
+        if (texto == null) texto = GetComponentInChildren<TMP_Text>(true);
+
         if (telaPreta != null)
         {
             telaPreta.alpha = 0f;
@@ -65,16 +69,18 @@ public class NarracaoFinal : MonoBehaviour
     public void Liberar()
     {
         liberado = true;
+        Debug.Log("[NarracaoFinal] Liberado (conversa com o Robo terminou)");
     }
 
     // Ligar no clique do "chao" no inventario
     public void Iniciar()
     {
-        if (rodando) return;
-        if (exigirLiberacao && !liberado) return;
-        if (DialogoManager.EmDialogo) return;
-        if (telaPreta == null || texto == null) return;
-        if (frases == null || frases.Length == 0) return;
+        Debug.Log("[NarracaoFinal] Iniciar chamado");
+        if (rodando) { Debug.Log("[NarracaoFinal] Ignorado: ja esta rodando"); return; }
+        if (exigirLiberacao && !liberado) { Debug.Log("[NarracaoFinal] Ignorado: ainda nao foi liberado (Liberar nao foi chamado)"); return; }
+        if (DialogoManager.EmDialogo) { Debug.Log("[NarracaoFinal] Ignorado: tem dialogo aberto"); return; }
+        if (telaPreta == null || texto == null) { Debug.Log("[NarracaoFinal] Ignorado: Tela Preta ou Texto sem referencia"); return; }
+        if (frases == null || frases.Length == 0) { Debug.Log("[NarracaoFinal] Ignorado: lista de frases vazia"); return; }
 
         StartCoroutine(Rotina());
     }

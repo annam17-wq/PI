@@ -573,8 +573,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -77, y: -0.0000038147}
+  m_SizeDelta: {x: 436.903, y: 102.003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &93623565
 MonoBehaviour:
@@ -2409,7 +2409,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4280558825
-  m_fontColor: {r: 0.9150943, g: 0.14244394, b: 0.14244394, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2848,7 +2848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa914f0a6dd96c4a923f7a3375a8e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  telaPreta: {fileID: 487961507}
+  telaPreta: {fileID: 335235171}
   texto: {fileID: 93623565}
   frases:
   - "Milla, se voc\xEA estiver me ouvindo"
@@ -2873,9 +2873,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335235168}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &335235172
 MonoBehaviour:
@@ -7932,6 +7932,27 @@ MonoBehaviour:
   - itemId: Cruzid
     spriteAmpliado: {fileID: -8602489267507255363, guid: 17aee4e7fe7a42d48bf7f27f4c1099b2, type: 3}
     dialogo: {fileID: 11400000, guid: fcc6af46cf881c54db6e33213a15061d, type: 2}
+    aoClicar:
+      m_PersistentCalls:
+        m_Calls: []
+  - itemId: ChaRoxoid
+    spriteAmpliado: {fileID: 0}
+    dialogo: {fileID: 0}
+    aoClicar:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 335235170}
+          m_TargetAssemblyTypeName: NarracaoFinal, Assembly-CSharp
+          m_MethodName: Iniciar
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1157086680
 GameObject:
   m_ObjectHideFlags: 0
@@ -8229,7 +8250,19 @@ MonoBehaviour:
   atraso: 0
   aoTerminar:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 335235170}
+        m_TargetAssemblyTypeName: NarracaoFinal, Assembly-CSharp
+        m_MethodName: Liberar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1178899218
 MonoBehaviour:
   m_ObjectHideFlags: 0
