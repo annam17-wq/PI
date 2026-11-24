@@ -15,7 +15,7 @@ MonoBehaviour:
   soUmaVez: 0
   falas:
   - nome: Agatha
-    texto: "meu deus... O QUE \xC9 ISSO??? "
+    texto: "Meu deus... O QUE \xC9 ISSO??? "
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
     spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
   - nome: Agatha

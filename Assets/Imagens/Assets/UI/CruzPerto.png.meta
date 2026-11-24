@@ -129,13 +129,13 @@ TextureImporter:
       name: CruzPerto_0
       rect:
         serializedVersion: 2
-        x: 199
-        y: 71
-        width: 626
-        height: 882
+        x: 72
+        y: 61
+        width: 875
+        height: 916
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 11, z: 0, w: 9}
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -149,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b2f32cdf119273a47b227b1199d77172
     internalID: 0
     vertices: []
     indices: 

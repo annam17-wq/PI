@@ -42,7 +42,7 @@ MonoBehaviour:
     spriteFechado: {fileID: 0}
     spriteAberto: {fileID: 0}
   - nome: Milla
-    texto: "Que hora \xE9 agora? "
+    texto: "Que horas s\xE3o?"
     spriteFechado: {fileID: -1811415868681339861, guid: 5b8ba16e02cb9564298215375d4f1ef5, type: 3}
     spriteAberto: {fileID: -5292333167925656135, guid: bd9d9685e0e91d746b6dbc0532f8ca64, type: 3}
   - nome: Agatha
@@ -62,7 +62,7 @@ MonoBehaviour:
   - nome: Milla
     texto: "T\xE1, eu vou no banheiro rapidinho, se n\xE3o encontrarmos uma melhor
       em 10 minutos, levamos essa que parece que a cinderella bateu a carruagem a
-      100 km/h"
+      100 km/h."
     spriteFechado: {fileID: -1811415868681339861, guid: 5b8ba16e02cb9564298215375d4f1ef5, type: 3}
     spriteAberto: {fileID: -5292333167925656135, guid: bd9d9685e0e91d746b6dbc0532f8ca64, type: 3}
   - nome: 

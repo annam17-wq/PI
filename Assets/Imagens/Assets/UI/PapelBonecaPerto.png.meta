@@ -129,12 +129,12 @@ TextureImporter:
       name: PapelBonecaPerto_0
       rect:
         serializedVersion: 2
-        x: 211
-        y: 67
-        width: 602
+        x: 89
+        y: 66
+        width: 839
         height: 946
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -149,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6b2b073721a8aea498b26415c87b8166
     internalID: 0
     vertices: []
     indices: 

@@ -101,10 +101,10 @@ MonoBehaviour:
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
     spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
   - nome: Milla
-    texto: "Pelo que eu vi aqui \xE9 um quadro do coliseu, pintado em 1747."
+    texto: "Pelo que eu vi aqui \xE9 um quadro da Roma Antiga"
     spriteFechado: {fileID: -1045338427213485008, guid: 145e7e3d7e0161f4e8fc1c9237b8030a, type: 3}
     spriteAberto: {fileID: 6442742839137912292, guid: 96d15d948d037dd4ea2feff9f8c3d9ca, type: 3}
   - nome: Agatha
-    texto: "Coliseu... ser\xE1 que isso \xE9 uma senha? "
+    texto: 'Roma.... '
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
     spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
