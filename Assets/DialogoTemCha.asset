@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soUmaVez: 1
   falas:
-  - nome: "Rob\xF4"
+  - nome: Robo
     texto: "Ent\xE3o senhorita, eu percebi que voc\xEA ta um pouco perdida. Por que
       voc\xEA n\xE3o descansa um pouco? "
     spriteFechado: {fileID: -5394850541725157563, guid: 6f62946670069af4293861a6a13ad9a4, type: 3}
@@ -32,7 +32,7 @@ MonoBehaviour:
     texto: Eu...
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
     spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
-  - nome: "Rob\xF4"
+  - nome: Robo
     texto: "Olha, se EU fosse voc\xEA. aproveitaria para experimentar esse ch\xE1
       que eu preparei para voc\xEA."
     spriteFechado: {fileID: -5394850541725157563, guid: 6f62946670069af4293861a6a13ad9a4, type: 3}
@@ -42,7 +42,7 @@ MonoBehaviour:
       N\xE3o vai funcionar."
     spriteFechado: {fileID: -7660342593453531606, guid: dcbb32743ca182248b1e5c2d724c73ee, type: 3}
     spriteAberto: {fileID: -7683067344835611109, guid: 0dbf9b7721155b943a7f91aaf477aad6, type: 3}
-  - nome: "Rob\xF4"
+  - nome: Robo
     texto: "Te matar? Eu s\xF3 quero que voc\xEA experimente minha obra de arte!
       Se eu quisesse voc\xEA morta, acha que eu ja n\xE3o o teria feito?"
     spriteFechado: {fileID: -5394850541725157563, guid: 6f62946670069af4293861a6a13ad9a4, type: 3}
@@ -56,7 +56,7 @@ MonoBehaviour:
       ajudar no seu objetivo"
     spriteFechado: {fileID: -5394850541725157563, guid: 6f62946670069af4293861a6a13ad9a4, type: 3}
     spriteAberto: {fileID: -8653980411494036482, guid: b1f076500edb7b84eb27001b4d432521, type: 3}
-  - nome: "Rob\xF4"
+  - nome: Robo
     texto: "Ele talvez at\xE9 fa\xE7a voc\xEA enxergar coisas que voc\xEA n\xE3o
       enxerga agora;"
     spriteFechado: {fileID: -5394850541725157563, guid: 6f62946670069af4293861a6a13ad9a4, type: 3}

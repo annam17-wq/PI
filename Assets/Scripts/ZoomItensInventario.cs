@@ -2,11 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Coloque este script no objeto "ZoomManager" (o mesmo que tem o script ZoomManager).
-// Ao clicar no ícone de um item no inventário:
-//  - abre o zoom com o PNG ampliado desse item (se tiver PNG)
-//  - abre um dialogo junto (se tiver)
-//  - dispara o evento "Ao Clicar" (se tiver)
 public class ZoomItensInventario : MonoBehaviour
 {
     public static ZoomItensInventario Instance { get; private set; }
@@ -25,6 +20,12 @@ public class ZoomItensInventario : MonoBehaviour
 
         [Tooltip("Marque no item do cha: ao clicar, inicia a narracao final (acha o NarracaoFinal da cena sozinho, sem precisar ligar nada)")]
         public bool iniciaNarracaoFinal;
+
+        [Tooltip("Marque no cha: antes do discurso do robo terminar, clicar so toca o 'Dialogo Antes Do Discurso' e nao faz mais nada")]
+        public bool exigeDiscursoDoRobo;
+
+        [Tooltip("Dialogo que toca se o jogador clicar antes do discurso do robo (ex.: DialogoChaAntes)")]
+        public DialogoData dialogoAntesDoDiscurso;
 
         [Tooltip("Opcional: roda ao clicar no item (ex.: NarracaoFinal.Iniciar)")]
         public UnityEvent aoClicar;
@@ -56,9 +57,21 @@ public class ZoomItensInventario : MonoBehaviour
             return;
         }
 
+        // Acha o NarracaoFinal uma vez (usado na trava e no inicio da narracao)
+        NarracaoFinal narracao = Object.FindFirstObjectByType<NarracaoFinal>(FindObjectsInactive.Include);
+
+        // Antes do discurso do robo: so toca o dialogo e sai
+        // A liberacao vem do proprio NarracaoFinal (Liberado), que e marcado
+        // quando o ultimo dialogo do Robo termina.
+        if (zoom.exigeDiscursoDoRobo && (narracao == null || !narracao.Liberado))
+        {
+            if (zoom.dialogoAntesDoDiscurso != null && DialogoManager.Instance != null)
+                DialogoManager.Instance.IniciarDialogo(zoom.dialogoAntesDoDiscurso);
+            return;
+        }
+
         if (zoom.iniciaNarracaoFinal)
         {
-            NarracaoFinal narracao = Object.FindFirstObjectByType<NarracaoFinal>(FindObjectsInactive.Include);
             if (narracao != null) narracao.Iniciar();
             else Debug.LogWarning("[ZoomItens] NarracaoFinal nao foi encontrada na cena");
         }

@@ -266,6 +266,70 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &29341354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 29341356}
+  - component: {fileID: 29341355}
+  m_Layer: 0
+  m_Name: GatilhoChaAntesAntes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &29341355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29341354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2440609c6b5dfae4e844c478bd4a79c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogo: {fileID: 11400000, guid: 9e20f06a37504ab4f9a169a4a722832e, type: 2}
+  gatilho: 2
+  atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
+  aoTerminar:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1147601300}
+        m_TargetAssemblyTypeName: ZoomItensInventario, Assembly-CSharp
+        m_MethodName: MarcarDiscursoDoRoboConcluido
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &29341356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29341354}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 442.97604, y: 215.99141, z: -2.3336124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &33061840
 GameObject:
   m_ObjectHideFlags: 0
@@ -5417,6 +5481,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541089412}
   m_CullTransparentMesh: 1
+--- !u!1 &557161113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557161115}
+  - component: {fileID: 557161114}
+  m_Layer: 0
+  m_Name: GatilhoPosCasaBarulho
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &557161114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557161113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2440609c6b5dfae4e844c478bd4a79c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogo: {fileID: 11400000, guid: 75769b339df6e484781738f9d0e01217, type: 2}
+  gatilho: 2
+  atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
+  aoTerminar:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &557161115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557161113}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 442.97604, y: 215.99141, z: -2.3336124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &567594259
 GameObject:
   m_ObjectHideFlags: 0
@@ -6567,7 +6695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &667524480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8599,6 +8727,8 @@ MonoBehaviour:
     spriteAmpliado: {fileID: -8602489267507255363, guid: 17aee4e7fe7a42d48bf7f27f4c1099b2, type: 3}
     dialogo: {fileID: 11400000, guid: fcc6af46cf881c54db6e33213a15061d, type: 2}
     iniciaNarracaoFinal: 0
+    exigeDiscursoDoRobo: 0
+    dialogoAntesDoDiscurso: {fileID: 0}
     aoClicar:
       m_PersistentCalls:
         m_Calls: []
@@ -8606,9 +8736,23 @@ MonoBehaviour:
     spriteAmpliado: {fileID: 0}
     dialogo: {fileID: 0}
     iniciaNarracaoFinal: 1
+    exigeDiscursoDoRobo: 1
+    dialogoAntesDoDiscurso: {fileID: 11400000, guid: 9e20f06a37504ab4f9a169a4a722832e, type: 2}
     aoClicar:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1147601300}
+          m_TargetAssemblyTypeName: ZoomItensInventario, Assembly-CSharp
+          m_MethodName: MarcarDiscursoDoRoboConcluido
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1157086680
 GameObject:
   m_ObjectHideFlags: 0
@@ -11104,7 +11248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1519959586
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16113,7 +16257,9 @@ SceneRoots:
   - {fileID: 620213018}
   - {fileID: 1147505379}
   - {fileID: 1057479814}
+  - {fileID: 29341356}
   - {fileID: 457819991}
+  - {fileID: 557161115}
   - {fileID: 1836903680}
   - {fileID: 1918088059}
   - {fileID: 2129426536}
