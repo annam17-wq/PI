@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Robo3Falando_0: -8653980411494036482
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

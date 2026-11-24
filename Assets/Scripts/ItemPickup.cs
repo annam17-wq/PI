@@ -139,6 +139,19 @@ public class ItemPickup : MonoBehaviour,
     [Tooltip("Quando o objeto exige VÁRIOS itens: dispara a cada item entregue que ainda não completou tudo (ex.: o polvo comeu o 1º peixe, mas ainda quer o 2º)")]
     public DialogoTrigger dialogoAposEntregaParcial;
 
+    [System.Serializable]
+    public class DialogoPorItem
+    {
+        [Tooltip("itemId do item entregue (ex.: o id do peixe)")]
+        public string itemId;
+
+        [Tooltip("Diálogo que toca quando ESSE item é entregue e ainda faltam outros. Vazio = nenhum diálogo")]
+        public DialogoTrigger dialogo;
+    }
+
+    [Tooltip("Diálogo de entrega parcial POR ITEM. Se o item entregue estiver aqui, toca o diálogo dele (ou nada, se vazio). Se não estiver aqui, vale o 'Dialogo Apos Entrega Parcial' geral")]
+    public DialogoPorItem[] dialogosEntregaParcialPorItem;
+
     [Header("Diálogo depois da segunda etapa")]
     [Tooltip("Dispara quando a 2ª etapa der certo (ex.: depois de receber a cruz do urso)")]
     public DialogoTrigger dialogoAposSegundaEtapa;
@@ -279,6 +292,8 @@ public class ItemPickup : MonoBehaviour,
     // ---------- Clique ----------
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log($"[ItemPickup] OnPointerClick em '{name}', modo={modo}");
+
         if (GameManager.Instance == null) return;
 
         switch (modo)
@@ -343,6 +358,7 @@ public class ItemPickup : MonoBehaviour,
             case ModoInteracao.ApenasArrastar:
                 // Clique no ícone do inventário: abre o zoom do item, se ele tiver um configurado
                 ResolverIdPeloIcone();
+                Debug.Log($"[ItemPickup] clique no icone '{name}': itemId='{itemId}', ZoomItensInventario existe? {ZoomItensInventario.Instance != null}");
                 if (!string.IsNullOrEmpty(itemId) && ZoomItensInventario.Instance != null)
                     ZoomItensInventario.Instance.Abrir(itemId);
                 break;
@@ -420,15 +436,33 @@ public class ItemPickup : MonoBehaviour,
         {
             Debug.Log($"Item '{item.itemId}' entregue ({itensEntregues.Count}/{requeridos.Count}).");
 
-            if (dialogoAposEntregaParcial != null)
-                dialogoAposEntregaParcial.Disparar();
-
+            DispararDialogoParcial(item.itemId);
             return;
         }
 
         // Todos entregues: dispara o efeito (os itens já foram consumidos acima)
         if (ExecutarResultado(System.Array.Empty<string>()))
             itensEntregues.Clear();
+    }
+
+    // Diálogo de entrega parcial: usa o do item entregue, se existir na lista.
+    // Se o item não estiver na lista, vale o diálogo geral (dialogoAposEntregaParcial).
+    private void DispararDialogoParcial(string idEntregue)
+    {
+        if (dialogosEntregaParcialPorItem != null)
+        {
+            foreach (DialogoPorItem d in dialogosEntregaParcialPorItem)
+            {
+                if (d != null && d.itemId == idEntregue)
+                {
+                    if (d.dialogo != null) d.dialogo.Disparar();
+                    return;
+                }
+            }
+        }
+
+        if (dialogoAposEntregaParcial != null)
+            dialogoAposEntregaParcial.Disparar();
     }
 
     // Item arrastado até o objeto durante a 2ª etapa

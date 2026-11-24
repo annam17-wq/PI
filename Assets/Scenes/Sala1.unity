@@ -509,6 +509,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: f8c81c5436069714498c96b90f5d66a4, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls:
@@ -764,6 +766,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 204252519}
 --- !u!114 &98321558
 MonoBehaviour:
@@ -917,6 +920,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: 22119a10a5a6c524799bde6450f5c680, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls: []
@@ -1009,7 +1014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &109464307
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1588,6 +1593,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!1 &140687458
 GameObject:
@@ -1760,6 +1766,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!1 &155400632
 GameObject:
@@ -1793,6 +1800,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: 14e83402cbc1a774593e1ccf882a88d4, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls:
@@ -1874,6 +1883,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: bd76133e01641034994b632164cb3a75, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls: []
@@ -2295,6 +2306,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!114 &289015043
 MonoBehaviour:
@@ -2368,7 +2380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -677, y: -242}
+  m_AnchoredPosition: {x: -677, y: -222}
   m_SizeDelta: {x: 159.234, y: 61.647}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &290261015
@@ -2401,7 +2413,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: agatha
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9a33504d570800741800770dc36ea1ef, type: 2}
   m_sharedMaterial: {fileID: -3652326926564940791, guid: d76f4ef3b62260c4a9377653bc1f2001, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2409,7 +2421,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4280558825
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 0.8679245, g: 0.8537428, b: 0.028657902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2426,8 +2438,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2711,6 +2723,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!61 &331325268
 BoxCollider2D:
@@ -2859,8 +2872,9 @@ MonoBehaviour:
   duracaoFade: 1.5
   pausaAntesDoTexto: 0.8
   segundosPorLetra: 0.05
-  pausaEntreFrases: 0.3
+  pausaEntreFrases: 1
   exigirLiberacao: 1
+  terminalObrigatorio: {fileID: 363368930}
   cenaAoTerminar: TelaInicial
   aoTerminar:
     m_PersistentCalls:
@@ -3039,6 +3053,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 620213017}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!1 &352370469
 GameObject:
@@ -3156,6 +3171,7 @@ GameObject:
   - component: {fileID: 363368927}
   - component: {fileID: 363368926}
   - component: {fileID: 363368930}
+  - component: {fileID: 363368931}
   m_Layer: 5
   m_Name: ConteudoTerminal
   m_TagString: Untagged
@@ -3374,6 +3390,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &363368931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363368925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2440609c6b5dfae4e844c478bd4a79c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogo: {fileID: 11400000, guid: 11becbe39aa277041bf9d215e6435516, type: 2}
+  gatilho: 1
+  atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
+  aoTerminar:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &363396080
 GameObject:
   m_ObjectHideFlags: 0
@@ -3809,6 +3845,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407038727}
   m_CullTransparentMesh: 1
+--- !u!1 &441352788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 441352790}
+  - component: {fileID: 441352789}
+  m_Layer: 0
+  m_Name: GatilhoSemCha
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &441352789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441352788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2440609c6b5dfae4e844c478bd4a79c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogo: {fileID: 11400000, guid: ed44453e211119b4d8e5d5dabb56d59f, type: 2}
+  gatilho: 2
+  atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
+  aoTerminar:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &441352790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441352788}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 442.97604, y: 215.99141, z: -2.3336124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &443000950
 GameObject:
   m_ObjectHideFlags: 0
@@ -4001,6 +4089,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: 4feae9d4a75226d4ea41af10ad7aca7a, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls: []
@@ -4074,6 +4164,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: 9887551b5a2d4824daef18da97bd3267, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls:
@@ -4382,6 +4474,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!61 &476059619
 BoxCollider2D:
@@ -4594,7 +4687,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.44}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -151, y: 59}
+  m_AnchoredPosition: {x: -242, y: 60}
   m_SizeDelta: {x: 108.03906, y: 77.82001}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &490074888
@@ -4980,6 +5073,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!1 &501690277
 GameObject:
@@ -5013,6 +5107,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: f2d7950d96e55d441814d5b9ce232c50, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls: []
@@ -5199,6 +5295,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: b32f26d20355b9240b449fec60eb1cb8, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls:
@@ -5319,6 +5417,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541089412}
   m_CullTransparentMesh: 1
+--- !u!1 &567594259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 567594261}
+  - component: {fileID: 567594260}
+  m_Layer: 0
+  m_Name: GatilhoComCha
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &567594260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567594259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2440609c6b5dfae4e844c478bd4a79c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogo: {fileID: 11400000, guid: 63e7868fbde04354dbc93e4905c680aa, type: 2}
+  gatilho: 2
+  atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
+  aoTerminar:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 335235170}
+        m_TargetAssemblyTypeName: NarracaoFinal, Assembly-CSharp
+        m_MethodName: Liberar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &567594261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567594259}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 442.97604, y: 215.99141, z: -2.3336124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &568571269
 GameObject:
   m_ObjectHideFlags: 0
@@ -5483,6 +5645,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: e3681ea9ee1940143976c8cdacabab3b, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls: []
@@ -5680,6 +5844,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: ea0afbc37a746cf4c859233b54ab4810, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 363368930}
   aoTerminar:
     m_PersistentCalls:
       m_Calls:
@@ -5797,6 +5963,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!61 &633252081
 BoxCollider2D:
@@ -5956,6 +6123,159 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638541812}
+  m_CullTransparentMesh: 1
+--- !u!1 &655920636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 655920637}
+  - component: {fileID: 655920641}
+  - component: {fileID: 655920640}
+  - component: {fileID: 655920639}
+  - component: {fileID: 655920638}
+  m_Layer: 5
+  m_Name: Porta
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &655920637
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655920636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2095492602}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -535.41003, y: -40.479}
+  m_SizeDelta: {x: 280.118, y: 423.996}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &655920638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655920636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 655920640}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 655920639}
+        m_TargetAssemblyTypeName: DialogoTrigger, Assembly-CSharp
+        m_MethodName: Disparar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &655920639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655920636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2440609c6b5dfae4e844c478bd4a79c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogo: {fileID: 11400000, guid: d3266395afa57d14493333441513b2a9, type: 2}
+  gatilho: 2
+  atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
+  aoTerminar:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &655920640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655920636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &655920641
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655920636}
   m_CullTransparentMesh: 1
 --- !u!1 &659241700
 GameObject:
@@ -6428,6 +6748,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: 9ad70b3e9594f0f4392941070c13e77c, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls:
@@ -6581,6 +6903,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: f8a41b25a8eb8254fa3731083d8492d3, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls: []
@@ -6860,6 +7184,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!61 &749289601
 BoxCollider2D:
@@ -7423,6 +7748,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908594969}
   m_CullTransparentMesh: 1
+--- !u!1 &920988068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 920988070}
+  - component: {fileID: 920988069}
+  m_Layer: 0
+  m_Name: GatilhoSemChaFinal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &920988069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920988068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2440609c6b5dfae4e844c478bd4a79c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogo: {fileID: 11400000, guid: 5511908b3a57d664696a8a6955279827, type: 2}
+  gatilho: 2
+  atraso: 0
+  exigeTerminalConcluido: {fileID: 363368930}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
+  aoTerminar:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 335235170}
+        m_TargetAssemblyTypeName: NarracaoFinal, Assembly-CSharp
+        m_MethodName: Liberar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &920988070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920988068}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 442.97604, y: 215.99141, z: -2.3336124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &957226759
 GameObject:
   m_ObjectHideFlags: 0
@@ -7509,6 +7898,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 524873616}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!114 &957226762
 MonoBehaviour:
@@ -7600,7 +7990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
-  m_DragThreshold: 10
+  m_DragThreshold: 30
 --- !u!4 &969016632
 Transform:
   m_ObjectHideFlags: 0
@@ -7763,7 +8153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 570.5682, y: 275.77368}
+  m_AnchoredPosition: {x: 372, y: 537}
   m_SizeDelta: {x: 2357.8, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1057479812
@@ -7798,6 +8188,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: afefe3661592b2a4fa25e6de55cecf69, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls:
@@ -8142,27 +8534,17 @@ MonoBehaviour:
   - itemId: Cruzid
     spriteAmpliado: {fileID: -8602489267507255363, guid: 17aee4e7fe7a42d48bf7f27f4c1099b2, type: 3}
     dialogo: {fileID: 11400000, guid: fcc6af46cf881c54db6e33213a15061d, type: 2}
+    iniciaNarracaoFinal: 0
     aoClicar:
       m_PersistentCalls:
         m_Calls: []
   - itemId: ChaRoxoid
     spriteAmpliado: {fileID: 0}
     dialogo: {fileID: 0}
+    iniciaNarracaoFinal: 1
     aoClicar:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 335235170}
-          m_TargetAssemblyTypeName: NarracaoFinal, Assembly-CSharp
-          m_MethodName: Iniciar
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &1157086680
 GameObject:
   m_ObjectHideFlags: 0
@@ -8217,6 +8599,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: 173f335642a3827468b8ea7fd440fcf7, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls: []
@@ -8326,10 +8710,8 @@ GameObject:
   - component: {fileID: 1178899214}
   - component: {fileID: 1178899216}
   - component: {fileID: 1178899215}
-  - component: {fileID: 1178899220}
   - component: {fileID: 1178899219}
   - component: {fileID: 1178899218}
-  - component: {fileID: 1178899217}
   m_Layer: 5
   m_Name: Robo
   m_TagString: Untagged
@@ -8402,8 +8784,9 @@ MonoBehaviour:
   objetosParaMostrar: []
   dialogoAoClicarFechado: {fileID: 0}
   dialogoAoColetar: {fileID: 0}
-  dialogoAposInteracao: {fileID: 0}
+  dialogoAposInteracao: {fileID: 920988069}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!114 &1178899215
 MonoBehaviour:
@@ -8443,36 +8826,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178899212}
   m_CullTransparentMesh: 1
---- !u!114 &1178899217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178899212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2440609c6b5dfae4e844c478bd4a79c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogo: {fileID: 11400000, guid: 63e7868fbde04354dbc93e4905c680aa, type: 2}
-  gatilho: 2
-  atraso: 0
-  aoTerminar:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 335235170}
-        m_TargetAssemblyTypeName: NarracaoFinal, Assembly-CSharp
-        m_MethodName: Liberar
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1178899218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8488,6 +8841,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: 8bdb2029e8757df4e83d211038433bfc, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls: []
@@ -8504,26 +8859,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terminal: {fileID: 363368930}
+  itemIdDoCha: ChaRoxoid
   dialogoAntesDoTerminal: {fileID: 1178899218}
-  dialogoDepoisDoTerminal: {fileID: 1178899217}
---- !u!114 &1178899220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178899212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2440609c6b5dfae4e844c478bd4a79c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogo: {fileID: 11400000, guid: 63e7868fbde04354dbc93e4905c680aa, type: 2}
-  gatilho: 2
-  atraso: 0
-  aoTerminar:
-    m_PersistentCalls:
-      m_Calls: []
+  dialogoComCha: {fileID: 567594260}
+  dialogoSemCha: {fileID: 441352789}
 --- !u!1 &1182098240
 GameObject:
   m_ObjectHideFlags: 0
@@ -8686,6 +9025,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: c5ce966fc50e4e448977c445d44f4b15, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls: []
@@ -9429,6 +9770,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 155400633}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 2024107183}
 --- !u!114 &1341619508
 MonoBehaviour:
@@ -9783,6 +10125,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!114 &1384720728
 MonoBehaviour:
@@ -10260,6 +10603,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 675034400}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!114 &1427788696
 MonoBehaviour:
@@ -10331,6 +10675,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: 010aef9edc1c8f54897a485a15002ab3, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls:
@@ -10561,7 +10907,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.44}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -113, y: -386}
+  m_AnchoredPosition: {x: -201, y: -477}
   m_SizeDelta: {x: 108.039, y: 77.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1506757646
@@ -10796,6 +11142,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: b36084a346b370e41a8607099b0f336d, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls:
@@ -11342,6 +11690,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!1 &1624275933
 GameObject:
@@ -11566,6 +11915,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: fb18d05d4bbdfe349b2c720a1466f79a, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls:
@@ -11941,6 +12292,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!114 &1732228631
 MonoBehaviour:
@@ -12466,6 +12818,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!1 &1836903678
 GameObject:
@@ -12499,6 +12852,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: 712d38287b954974cba4c872059dfb59, type: 2}
   gatilho: 1
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls:
@@ -12691,6 +13046,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!1 &1856196742
 GameObject:
@@ -12724,6 +13080,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: 81810040bf27b4f4192787fac6cb2644, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls:
@@ -12848,6 +13206,8 @@ GameObject:
   - component: {fileID: 1884642981}
   - component: {fileID: 1884642980}
   - component: {fileID: 1884642983}
+  - component: {fileID: 1884642985}
+  - component: {fileID: 1884642984}
   m_Layer: 5
   m_Name: Lista
   m_TagString: Untagged
@@ -12927,6 +13287,82 @@ MonoBehaviour:
   tipo: 0
   spriteAmpliado: {fileID: -8325631820205403177, guid: 2a487003941eef349b5fad90930d24fb, type: 3}
   conteudoExtra: {fileID: 0}
+--- !u!114 &1884642984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884642978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1884642980}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1884642985}
+        m_TargetAssemblyTypeName: DialogoTrigger, Assembly-CSharp
+        m_MethodName: Disparar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1884642985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884642978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2440609c6b5dfae4e844c478bd4a79c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogo: {fileID: 11400000, guid: dfd2cea05e095a043996b8531f16bdb4, type: 2}
+  gatilho: 2
+  atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
+  aoTerminar:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1886365869
 GameObject:
   m_ObjectHideFlags: 0
@@ -13051,6 +13487,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 733875468}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!1 &1892346090
 GameObject:
@@ -13349,6 +13786,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!1 &1918088057
 GameObject:
@@ -13500,6 +13938,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!114 &1933206383
 MonoBehaviour:
@@ -14007,6 +14446,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: 176feeaabb8ea84429a15848391ea343, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls: []
@@ -14136,6 +14577,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: 3d763541284b33c4cba12d87184d18fb, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls:
@@ -14337,6 +14780,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!1 &2036379050
 GameObject:
@@ -14425,6 +14869,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!61 &2036379053
 BoxCollider2D:
@@ -14681,6 +15126,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!1 &2071135687
 GameObject:
@@ -14843,7 +15289,10 @@ MonoBehaviour:
   dialogoAoClicarFechado: {fileID: 86650756}
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 1522089110}
-  dialogoAposEntregaParcial: {fileID: 1856196743}
+  dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem:
+  - itemId: Royalid
+    dialogo: {fileID: 1856196743}
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!114 &2080335552
 MonoBehaviour:
@@ -14963,7 +15412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2095492601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15007,6 +15456,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1281998008}
+  - {fileID: 655920637}
   - {fileID: 496703705}
   - {fileID: 1571711094}
   - {fileID: 1556996313}
@@ -15139,6 +15589,8 @@ MonoBehaviour:
   dialogo: {fileID: 11400000, guid: ce3dc4aa0fde7e74d879f4ff90f8bf1d, type: 2}
   gatilho: 2
   atraso: 0
+  exigeTerminalConcluido: {fileID: 0}
+  naoDisparaSeTerminalConcluido: {fileID: 0}
   aoTerminar:
     m_PersistentCalls:
       m_Calls:
@@ -15499,6 +15951,7 @@ MonoBehaviour:
   dialogoAoColetar: {fileID: 0}
   dialogoAposInteracao: {fileID: 0}
   dialogoAposEntregaParcial: {fileID: 0}
+  dialogosEntregaParcialPorItem: []
   dialogoAposSegundaEtapa: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -15517,6 +15970,9 @@ SceneRoots:
   - {fileID: 2024107184}
   - {fileID: 86650757}
   - {fileID: 1522089111}
+  - {fileID: 567594261}
+  - {fileID: 920988070}
+  - {fileID: 441352790}
   - {fileID: 1856196744}
   - {fileID: 524873617}
   - {fileID: 620213018}

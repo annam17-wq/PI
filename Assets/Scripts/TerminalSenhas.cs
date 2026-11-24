@@ -87,6 +87,9 @@ public class TerminalSenhas : MonoBehaviour
     {
         if (textoTerminal == null) return;
 
+        // Enquanto um dialogo esta aberto, o teclado (espaco, etc.) nao digita no terminal
+        if (DialogoManager.EmDialogo) return;
+
         // Sem campo de entrada, nenhum botao pode ficar selecionado,
         // senao o Enter do jogador aperta esse botao (ex.: o de pause)
         if (campoEntrada == null && !concluido &&
@@ -117,6 +120,10 @@ public class TerminalSenhas : MonoBehaviour
                 else if (c == '\n' || c == '\r')
                 {
                     Enviar();
+                }
+                else if (c == ' ' && digitado.Length == 0)
+                {
+                    // Ignora espaco no comeco (ex.: o espaco que fechou um dialogo)
                 }
                 else if (!char.IsControl(c) && digitado.Length < maxCaracteres)
                 {

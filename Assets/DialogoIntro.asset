@@ -38,7 +38,7 @@ MonoBehaviour:
     spriteFechado: {fileID: 236776573426472243, guid: 70f71258413e06a4cae45c63e1f08109, type: 3}
     spriteAberto: {fileID: -1565899972492246751, guid: 767ae1f9c470fed43a0151a5a1ac82e5, type: 3}
   - nome: 
-    texto: "ambas olham em dire\xE7\xE3o a f\xE1brica e sentem um arrepio na espinha\r\n\r"
+    texto: "Ambas olham em dire\xE7\xE3o a f\xE1brica e sentem um arrepio na espinha\r\n\r"
     spriteFechado: {fileID: 0}
     spriteAberto: {fileID: 0}
   - nome: Milla

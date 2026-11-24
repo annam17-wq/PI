@@ -38,6 +38,9 @@ public class NarracaoFinal : MonoBehaviour
     [Tooltip("Marcado: so comeca depois que Liberar() for chamado")]
     public bool exigirLiberacao = true;
 
+    [Tooltip("Opcional: so comeca se este terminal ja tiver sido concluido (ConteudoTerminal)")]
+    public TerminalSenhas terminalObrigatorio;
+
     [Header("Quando terminar")]
     [Tooltip("Nome da cena para carregar no fim da narracao (ex.: TelaInicial). Vazio = nao troca de cena")]
     public string cenaAoTerminar = "TelaInicial";
@@ -78,6 +81,7 @@ public class NarracaoFinal : MonoBehaviour
         Debug.Log("[NarracaoFinal] Iniciar chamado");
         if (rodando) { Debug.Log("[NarracaoFinal] Ignorado: ja esta rodando"); return; }
         if (exigirLiberacao && !liberado) { Debug.Log("[NarracaoFinal] Ignorado: ainda nao foi liberado (Liberar nao foi chamado)"); return; }
+        if (terminalObrigatorio != null && !terminalObrigatorio.Concluido) { Debug.Log("[NarracaoFinal] Ignorado: o terminal ainda nao foi concluido"); return; }
         if (DialogoManager.EmDialogo) { Debug.Log("[NarracaoFinal] Ignorado: tem dialogo aberto"); return; }
         if (telaPreta == null || texto == null) { Debug.Log("[NarracaoFinal] Ignorado: Tela Preta ou Texto sem referencia"); return; }
         if (frases == null || frases.Length == 0) { Debug.Log("[NarracaoFinal] Ignorado: lista de frases vazia"); return; }
