@@ -2,12 +2,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Coloque no objeto MenuInicial (o CanvasGroup é adicionado sozinho).
-// Faz fade em tudo que está dentro: título e botões.
+// Coloque no objeto MenuInicial (o CanvasGroup e adicionado sozinho).
+// Faz fade em tudo que esta dentro: titulo e botoes.
 [RequireComponent(typeof(CanvasGroup))]
 public class FadeMenu : MonoBehaviour
 {
-    public float duracao = 1f;
+    public float duracao = 1.5f;
+    public bool fadeInAoAbrir = true;
     public UnityEvent aoTerminarFade;
 
     CanvasGroup grupo;
@@ -16,6 +17,18 @@ public class FadeMenu : MonoBehaviour
     void Awake()
     {
         grupo = GetComponent<CanvasGroup>();
+
+        if (fadeInAoAbrir)
+        {
+            grupo.alpha = 0f;            // comeca invisivel
+            grupo.interactable = false;
+            grupo.blocksRaycasts = false;
+        }
+    }
+
+    void Start()
+    {
+        if (fadeInAoAbrir) FadeIn();
     }
 
     // Some (alpha 1 -> 0)
