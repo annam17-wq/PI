@@ -30,6 +30,12 @@ public class SaveData
     public float brilho = 1f;
     public int resolucaoIndex = -1;
     public bool telaCheia = true;
+
+    // Diálogos "só uma vez" que já tocaram (gravados no Salvar)
+    public List<string> dialogosVistos = new List<string>();
+
+    // A narração + diálogo inicial já foram vistos
+    public bool introConcluida;
 }
 
 [Serializable]
@@ -40,4 +46,3 @@ public class Vector3Data
     public Vector3Data(Vector3 v) { x = v.x; y = v.y; z = v.z; }
     public Vector3 ToVector3() => new Vector3(x, y, z);
 }
-

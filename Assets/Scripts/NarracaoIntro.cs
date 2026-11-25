@@ -26,12 +26,24 @@ public class NarracaoIntro : MonoBehaviour
 
     public UnityEvent aoTerminar;
 
+    [Tooltip("Chamado quando a intro JÁ foi vista (save carregado ou voltou ao menu). Ligue no que leva à Sala1 (ex.: TransicaoSala1).")]
+    public UnityEvent aoPularIntro;
+
     bool rodando;
 
     // Ligue no On Click() do botão Jogar
     public void Iniciar()
     {
-        if (!rodando) StartCoroutine(Sequencia());
+        if (rodando) return;
+
+        var dados = GameManager.Instance != null ? GameManager.Instance.currentData : null;
+        if (dados != null && dados.introConcluida)
+        {
+            aoPularIntro?.Invoke();   // já viu a intro: vai direto pra Sala1
+            return;
+        }
+
+        StartCoroutine(Sequencia());
     }
 
     IEnumerator Sequencia()
@@ -66,6 +78,11 @@ public class NarracaoIntro : MonoBehaviour
         telaPreta.blocksRaycasts = false;
 
         rodando = false;
+
+        // marca a intro como vista (vai pro save quando clicar em Salvar)
+        if (GameManager.Instance != null && GameManager.Instance.currentData != null)
+            GameManager.Instance.currentData.introConcluida = true;
+
         aoTerminar?.Invoke();
     }
 

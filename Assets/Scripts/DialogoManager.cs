@@ -22,7 +22,8 @@ public class DialogoManager : MonoBehaviour
     public float segundosPorLetra = 0.03f;
     public float intervaloBoca = 0.12f;
 
-    static readonly HashSet<string> vistos = new HashSet<string>();
+    // Reserva usada só se não houver GameManager na cena (ex.: testando uma cena isolada)
+    static readonly HashSet<string> vistosReserva = new HashSet<string>();
 
     DialogoData atual;
     int indice;
@@ -38,11 +39,44 @@ public class DialogoManager : MonoBehaviour
         if (painel != null) painel.SetActive(false);
     }
 
+    // Os diálogos já vistos ficam em GameManager.currentData.dialogosVistos,
+    // então são gravados junto com o save (botão Salvar) e carregados de volta.
+    static List<string> ListaVistos()
+    {
+        var gm = GameManager.Instance;
+        if (gm == null || gm.currentData == null) return null;
+        if (gm.currentData.dialogosVistos == null)
+            gm.currentData.dialogosVistos = new List<string>(); // saves antigos não têm a lista
+        return gm.currentData.dialogosVistos;
+    }
+
+    public static bool JaViu(string nome)
+    {
+        var l = ListaVistos();
+        return l != null ? l.Contains(nome) : vistosReserva.Contains(nome);
+    }
+
+    static void MarcarVisto(string nome)
+    {
+        var l = ListaVistos();
+        if (l != null) { if (!l.Contains(nome)) l.Add(nome); }
+        else vistosReserva.Add(nome);
+    }
+
+    // Use só ao começar um JOGO NOVO de verdade (apaga o histórico de diálogos vistos).
+    public static void ResetarVistos()
+    {
+        var l = ListaVistos();
+        if (l != null) l.Clear();
+        vistosReserva.Clear();
+        EmDialogo = false;
+    }
+
     public void IniciarDialogo(DialogoData dialogo, System.Action fim = null)
     {
         if (EmDialogo || dialogo == null || dialogo.falas.Count == 0) return;
-        if (dialogo.soUmaVez && vistos.Contains(dialogo.name)) return;
-        if (dialogo.soUmaVez) vistos.Add(dialogo.name);
+        if (dialogo.soUmaVez && JaViu(dialogo.name)) return;
+        if (dialogo.soUmaVez) MarcarVisto(dialogo.name);
 
         atual = dialogo;
         aoTerminar = fim;
